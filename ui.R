@@ -576,7 +576,7 @@ ui <- dashboardPage(
           ),
           
           box(
-            title = paste0(format(max(df_drought_hist$Start_Date), "%Y"), " Drought Levels at a Glance"),
+            title =  "2025 Drought Levels at a Glance",
             solidHeader = TRUE,
             collapsible = TRUE,
             width = 12,
