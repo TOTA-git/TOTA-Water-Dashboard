@@ -478,9 +478,9 @@ server <- function(input, output, session) {
         Date_Label = format(Start_Date, "%d-%b")
       )
     
-    df$`Basin Name` <- factor(
-      df$`Basin Name`,
-      levels = rev(unique(df$`Basin Name`))
+    df$BasinName <- factor(
+      df$BasinName,
+      levels = rev(unique(df$BasinName))
     )
     
     # Keep dates in chronological order
@@ -493,8 +493,8 @@ server <- function(input, output, session) {
       df,
       aes(
         x = Date_Label,
-        y = `Basin Name`,
-        fill = factor(`Drought Level`)
+        y = BasinName,
+        fill = factor(DroughtLevel)
       ),
     ) +
       
@@ -508,9 +508,9 @@ server <- function(input, output, session) {
       geom_text(
         aes(
           label = ifelse(
-            `Drought Level` == 6,
+            DroughtLevel == 6,
             "*",
-            `Drought Level`
+            DroughtLevel
           )
         ),
         size = 3
