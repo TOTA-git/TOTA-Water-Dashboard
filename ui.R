@@ -449,93 +449,6 @@ ui <- dashboardPage(
         ),
       ),
       
-      #' tabItem(
-      #'   tabName = "mean_daily_level",
-      #'   
-      #'   tags$style(HTML("
-      #'     @media (max-width: 600px) {
-      #'       #DailyMeanPast5YearsPlot { height: 350px !important; }
-      #'       #HistoricalDailyPlot { height: 350px !important; }
-      #'       #DailyMeanLevelPlot { height: 350px !important; }
-      #'     }
-      #'   ")),
-      #'   
-      #'   fluidRow(
-      #'     
-      #'       width = 12,
-      #'       box(
-      #'         title = "Lake Level - Is the lake level changing?",
-      #'         width = 12,
-      #'         status = "primary",
-      #'         solidHeader = TRUE,
-      #'         collapsible = TRUE,
-      #'         p(paste0("Okanagan Lake levels naturally fluctuate throughout the year because of snowmelt, precipitation, inflows, outflows, and evaporation.
-      #'                  Comparing the most recent available year ", max(df_daily_mean$Year), " with historic years provides context for current water conditions. 
-      #'                  The daily mean values shown represent the average lake level.")),
-      #'         p("Station 08NM083 (Okanagan Lake) is listed as ASSUMED DATUM, this means the station's zero point 
-      #'           is an arbitrary reference established for that gauge. A value like 1.4 m means the water surface was 1.4 m above the stations 
-      #'           assumed zero."),
-      #'         style = "font-size: 18px;"
-      #'       ),
-      #'     
-      #'     box(
-      #'       title = "Historic Vs Recent Mean",
-      #'       status = "primary",
-      #'       solidHeader = TRUE,
-      #'       collapsible = TRUE,
-      #'       width = 12,
-      #'       plotOutput("HistoricalDailyPlot" , height = 600),
-      #'       footer = paste0("Okanagan Lake (Station 08NM083); Shaded area shows the historical daily range (",
-      #'                       min(df_daily_mean$Year), 
-      #'                       "-", 
-      #'                       max(df_daily_mean$Year),
-      #'                       "); blue line shows ",
-      #'                       max(df_daily_mean$Year),
-      #'                       " daily mean lake level; pink line shows the historical daily mean.")
-      #'     ),
-      #'     
-      #'     box(
-      #'       title = "Mean daily Level of Okanagan Lake Over the last 5 years",
-      #'       status = "primary",
-      #'       solidHeader = TRUE,
-      #'       collapsible = TRUE,
-      #'       width = 12,
-      #'       plotOutput("DailyMeanPast5YearsPlot", height = 600)
-      #'     ),
-      #'     
-      #'     box(
-      #'       title = "Mean Level of Okanagan Lake",
-      #'       status = "primary",
-      #'       solidHeader = TRUE,
-      #'       collapsible = TRUE,
-      #'       width = 12,
-      #'       fluidRow(
-      #'         column(
-      #'           width = 3,
-      #'           selectInput(
-      #'             "levelyear",
-      #'             "Select Year:",
-      #'             choices = sort(unique(df_daily_mean$Year)),
-      #'             selected = "2025")
-      #'           ) 
-      #'         ),
-      #'       plotOutput("DailyMeanLevelPlot", height = 500)
-      #'     ),
-      #'     
-      #'     box(
-      #'       title = "References & Data",
-      #'       status = "primary",
-      #'       solidHeader = TRUE,
-      #'       collapsible = TRUE,
-      #'       width = 12,
-      #'       p("Data source: Environment and Climate Change Canada. Daily mean of water level or flow dataset. Government of Canada. Hydrometric Station 08NM083. 
-      #'         Retrieved via the MSC GeoMet API: https://api.weather.gc.ca/collections/hydrometric-daily-mean/items?f=json&STATION_NUMBER=08NM083&datetime=1990-01-01/.."),
-      #'       p("Data source: Environment and Climate Change Canada. Monitoring Stations dataset. Government of Canada. Hydrometric Station 08NM083. Retrieved via the MSC GeoMet
-      #'         API: https://api.weather.gc.ca/collections/hydrometric-stations/items?limit=10&offset=0&STATION_NUMBER=08NM083")
-      #'     )
-      #'   ),
-      #' ),
-      
       tabItem(
         tabName = "groundwater_wells",
         
@@ -663,7 +576,7 @@ ui <- dashboardPage(
           ),
           
           box(
-            title = "2025 Drought Levels at a Glance",
+            title = paste0(format(max(df_drought_hist$Start_Date), "%Y"), " Drought Levels at a Glance"),
             solidHeader = TRUE,
             collapsible = TRUE,
             width = 12,
