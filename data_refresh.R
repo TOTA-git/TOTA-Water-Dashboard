@@ -195,13 +195,13 @@ refresh_dataset(
     ) |>
       mutate(
         Start_Date = as.Date(as.POSIXct(Start_Date, format = "%m/%d/%Y, %I:%M %p")),
-        `Drought Level` = case_when(
-          `Drought Level` == "Not updated outside of core drought season" ~ 6,
-          TRUE ~ as.numeric(`Drought Level`)
+        DroughtLevel = case_when(
+          DroughtLevel == "Not updated outside of core drought season" ~ 6,
+          TRUE ~ as.numeric(DroughtLevel)
         )
       ) |>
-      select(`Basin Name`, Start_Date, `Drought Level`) |>
-      arrange(`Basin Name`, Start_Date)
+      select(BasinName, Start_Date, DroughtLevel) |>
+      arrange(BasinName, Start_Date)
   },
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "df_drought_hist.csv"))
 )
