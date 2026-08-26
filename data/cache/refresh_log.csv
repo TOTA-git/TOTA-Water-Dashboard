@@ -86,3 +86,10 @@ df_drought_hist,2026-08-26 23:09:43,failure,NA,"ℹ In argument: `Start_Date = a
 Caused by error:
 ! object 'Start_Date' not found"
 df_stream_temp,2026-08-26 23:09:43,success,17594,NA
+df_inflow,2026-08-26 23:18:38,success,52,NA
+df_consumption,2026-08-26 23:18:39,success,21,NA
+df_daily_mean,2026-08-26 23:18:41,success,13149,NA
+df_groundwater,2026-08-26 23:18:53,success,240,NA
+df_drought,2026-08-26 23:18:54,success,7,NA
+df_drought_hist,2026-08-26 23:18:55,success,175,NA
+df_stream_temp,2026-08-26 23:18:56,success,17594,NA
