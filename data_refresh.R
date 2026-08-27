@@ -194,7 +194,10 @@ refresh_dataset(
       show_col_types = FALSE
     ) |>
       mutate(
-        Start_Date = as.Date(Start_Date, format = "%Y/%m/%d %H:%M:%S%z"),
+        Start_Date = as.Date(
+          substr(Start_Date, 1, 10),
+          format = "%Y/%m/%d"
+        ),
         DroughtLevel = case_when(
           DroughtLevel == "Not updated outside of core drought season" ~ 6,
           TRUE ~ as.numeric(DroughtLevel)
