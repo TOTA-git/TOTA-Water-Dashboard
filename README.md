@@ -19,8 +19,6 @@ This repository is intended to serve as both the source code for the dashboard a
 * [Adding New Data Sources](#adding-new-data-sources)
 * [Troubleshooting](#troubleshooting)
 * [Important Maintenance Notes](#important-maintenance-notes)
-* [Future Development Opportunities](#future-development-opportunities)
-* [Project History and Context](#project-history-and-context)
 
 ---
 
@@ -88,8 +86,6 @@ This includes:
 * Styling and responsive design
   
 ```
-
----
 
 ## `server.R`
 
@@ -163,6 +159,7 @@ data/cache/
 global.R
         ↓
 Shiny Dashboard
+
 ```
 
 The dashboard itself reads from the cache rather than directly from external websites.
