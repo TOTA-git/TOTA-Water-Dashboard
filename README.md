@@ -11,14 +11,17 @@ This repository is intended to serve as both the source code for the dashboard a
 ## Table of Contents
 
 * [How the Application Works](#how-the-application-works)
-* [Data Refresh System](#data-refresh-system)
+* [How the Data Refresh System Works](#how-the-data-refresh-system-works)
 * [Data Sources](#data-sources)
 * [Running the Dashboard Locally](#running-the-dashboard-locally)
-* [Environment Variables and Sensitive URLs](#environment-variables-and-sensitive-urls)
+* [Secrets and variables for Sensitive URLs](#secrets-and-variables-for-sensitive-urls)
 * [How to Update the Dashboard](#how-to-update-the-dashboard)
 * [Adding New Data Sources](#adding-new-data-sources)
 * [Troubleshooting](#troubleshooting)
 * [Important Maintenance Notes](#important-maintenance-notes)
+* [Recommended Handover Checklist](#recommended-handover-checklist)
+* [Key Files at a Glance](#key-files-at-a-glance)
+* [Maintainer Notes](#maintainer-notes)
 
 ---
 
@@ -84,8 +87,6 @@ This includes:
 * Images
 * Footer
 * Styling and responsive design
-  
-```
 
 ## `server.R`
 
