@@ -50,8 +50,8 @@ read_cache_rds <- function(name) {
 }
 
 # --- Refresh logging ------------------------------------------------------
-# Appends one row per dataset per refresh attempt, so refresh_log.csv
-# builds a history of what succeeded/failed and when.
+# One row per dataset per refresh attempt, so refresh_log.csv
+# builds a history of what succeeded/failed.
 log_refresh <- function(name, status, message = NA_character_, n_rows = NA_integer_) {
   dir.create(CACHE_DIR, recursive = TRUE, showWarnings = FALSE)
   log_path <- file.path(CACHE_DIR, "refresh_log.csv")
@@ -64,6 +64,18 @@ log_refresh <- function(name, status, message = NA_character_, n_rows = NA_integ
     stringsAsFactors = FALSE
   )
   readr::write_csv(entry, log_path, append = file.exists(log_path))
+}
+
+# --- Clear Log -----------------------------------------------------------
+#Clears refresh_log.csv before each refresh
+clear_refresh_log <- function() {
+  dir.create(CACHE_DIR, recursive = TRUE, showWarnings = FALSE)
+  
+  log_path <- file.path(CACHE_DIR, "refresh_log.csv")
+  
+  if (file.exists(log_path)) {
+    file.remove(log_path)
+  }
 }
 
 # --- Groundwater well export helpers -------------------------------------
