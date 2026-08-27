@@ -2,7 +2,7 @@ name: Scheduled Data Refresh
 
 on:
   schedule:
-    - cron: '38 10 * * *' # Triggers automatically every single day
+    - cron: '37 10 * * *' # Triggers automatically every single day
   workflow_dispatch: # Allows manual trigger of test run instantly
 
 jobs:
