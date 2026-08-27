@@ -27,6 +27,8 @@ library(chromote)
 
 source("R/data_helpers.R")
 
+clear_refresh_log()
+
 # Headless Chrome needs --no-sandbox in containerized environments, where
 # chromote's automatic Docker/CI detection doesn't always add it.
 chromote::set_chrome_args(unique(c(chromote::get_chrome_args(), "--no-sandbox")))
