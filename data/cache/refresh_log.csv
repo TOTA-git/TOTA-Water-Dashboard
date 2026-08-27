@@ -100,3 +100,10 @@ df_groundwater,2026-08-27 20:42:33,success,240,NA
 df_drought,2026-08-27 20:42:34,success,7,NA
 df_drought_hist,2026-08-27 20:42:35,success,175,NA
 df_stream_temp,2026-08-27 20:42:35,success,17620,NA
+df_inflow,2026-08-27 20:51:44,success,52,NA
+df_consumption,2026-08-27 20:51:45,success,21,NA
+df_daily_mean,2026-08-27 20:51:47,success,13149,NA
+df_groundwater,2026-08-27 20:51:58,success,240,NA
+df_drought,2026-08-27 20:51:59,success,7,NA
+df_drought_hist,2026-08-27 20:52:00,success,175,NA
+df_stream_temp,2026-08-27 20:52:00,success,17620,NA
