@@ -29,6 +29,9 @@ This repository is intended to serve as both the source code for the dashboard a
 
 # How the Application Works
 
+The data is refreshed daily using a Github Action Workflow (refresh_data.yml). When the data is refresh it is pushed/committed to this repo, this triggers the Posit Connect Cloud to republish the dashboard with the new refreshed data. 
+*everytime a commit is made in the repo, the dashbaord is republished.*
+
 The dashboard is structured using standard R Shiny files.
 
 ## `app.R`
