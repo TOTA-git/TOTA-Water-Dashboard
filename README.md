@@ -10,12 +10,12 @@ The dashboard was developed by the **Thompson Okanagan Tourism Association (TOTA
 
 ## Features
 
-* 💧 Water Supply
-* 🌊 Water Consumption
-* 💦 Groundwater Wells
-* 🌵 Drought Conditions
-* 🐟 Fish habitat
-* 📊 Interactive charts, maps, and historical comparisons
+* Water Supply
+* Water Consumption
+* Groundwater Wells
+* Drought Conditions
+* Fish habitat
+* Interactive charts, maps, and historical comparisons
 
 ## Technologies
 
