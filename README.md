@@ -33,4 +33,5 @@ The dashboard was developed by the **Thompson Okanagan Tourism Association (TOTA
 ## Project Impact
 
 **Developer:** Alexis Samp
+
 **Organization:** Thompson Okanagan Tourism Association
