@@ -1,12 +1,9 @@
-# TOTA Water Dashboard
-
-An interactive **R Shiny dashboard hosted by Posit Connect Cloud** that brings together publicly available water and environmental data for the Thompson Okanagan region.
+# TOTA Water Dashboard Maintenance
 
 https://tota-water-dashboard.share.connect.posit.cloud/
 
-The dashboard was developed by the **Thompson Okanagan Tourism Association (TOTA)** to support water management reporting for the **UN Tourism International Network of Sustainable Tourism Observatories (INSTO)**. The Okanagan watershed is currently used as a pilot area for developing repeatable methods to collect, organize, monitor, and communicate regional water data.
 
-This repository is intended to serve as both the source code for the dashboard and a technical handover document for future TOTA staff responsible for maintaining or expanding the project.
+This document is intended to serve as a technical handover document for future TOTA staff responsible for maintaining or expanding the project.
 
 ---
 
