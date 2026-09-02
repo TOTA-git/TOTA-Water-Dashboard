@@ -20,6 +20,7 @@ The dashboard was developed by the **Thompson Okanagan Tourism Association (TOTA
 ## Technologies
 
 * **R & R Shiny**
+* **Posit Connect Cloud**
 * **ggplot & Leaflet**
 * **API integration & web scraping**
 * **Spatial and time-series data**
