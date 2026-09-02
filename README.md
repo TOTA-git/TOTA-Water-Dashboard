@@ -30,7 +30,7 @@ The dashboard was developed by the **Thompson Okanagan Tourism Association (TOTA
 
 **Data Engineering · Data Cleaning · Data Analysis · Data Visualization · GIS · Dashboard Development · API Integration · Automation · Git/GitHub**
 
-##Created By
+## Created By
 
 **Developer:** Alexis Samp
 
