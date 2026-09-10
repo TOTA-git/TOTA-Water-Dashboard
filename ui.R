@@ -97,7 +97,7 @@ ui <- dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       id = "tabs",
-      menuItem("Home", tabName = "home", icon = icon("home")),
+      menuItem("Overview", tabName = "overview", icon = icon("readme")),
       menuItem("Water Supply", tabName = "net_inflow", icon = icon("square-poll-vertical")),
       menuItem("Water Consumption", tabName = "water_consumption", icon = icon("droplet")),
       menuItem("Groundwater Wells", tabName = "groundwater_wells", icon = icon("map-location")),
@@ -126,7 +126,7 @@ ui <- dashboardPage(
       
       tabItem(
         
-        tabName = "home",
+        tabName = "overview",
         
         tags$img(
           src = "banner.png",
