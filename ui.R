@@ -77,7 +77,22 @@ footer_TOTA <- tags$footer(
 
 #USER INTERFACE
 ui <- dashboardPage(
-  dashboardHeader(title = "TOTA Dashboard"),
+  dashboardHeader(
+    title = "TOTA Dashboard",
+    tags$li(
+        class = "dropdown",
+        tags$a(
+        href = "https://tota-insto-hub.share.connect.posit.cloud/",
+        icon("globe"),
+        " TOTA INSTO HUB",
+        style = "
+        color: white;
+        font-size: 18px;
+        padding: 15px;
+        text-decoration: underline;",
+      )
+    )
+  ),
   
   dashboardSidebar(
     sidebarMenu(
@@ -87,7 +102,8 @@ ui <- dashboardPage(
       menuItem("Water Consumption", tabName = "water_consumption", icon = icon("droplet")),
       menuItem("Groundwater Wells", tabName = "groundwater_wells", icon = icon("map-location")),
       menuItem("Drought Conditions", tabName = "drought_level", icon = icon("hand-holding-droplet")),
-      menuItem("Fish", tabName = "stream", icon = icon("fish"))
+      menuItem("Fish", tabName = "stream", icon = icon("fish")),
+      menuItem("Back to Hub", tabName = NULL, icon = icon("globe"), href = "https://tota-insto-hub.share.connect.posit.cloud/")
     ),
     
     tags$img(
