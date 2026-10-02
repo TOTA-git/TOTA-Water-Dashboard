@@ -1,8 +1,8 @@
 dataset,timestamp,status,n_rows,message
-df_inflow,2026-10-01 22:06:54,success,52,NA
-df_consumption,2026-10-01 22:06:54,success,21,NA
-df_daily_mean,2026-10-01 22:06:56,success,13149,NA
-df_groundwater,2026-10-01 22:07:16,success,240,NA
-df_drought,2026-10-01 22:07:16,success,7,NA
-df_drought_hist,2026-10-01 22:07:17,success,175,NA
-df_stream_temp,2026-10-01 22:07:17,success,18530,NA
+df_inflow,2026-10-02 21:28:58,failure,NA,Data table tab was activated but no <table> was found inside it.
+df_consumption,2026-10-02 21:28:58,success,21,NA
+df_daily_mean,2026-10-02 21:29:00,success,13149,NA
+df_groundwater,2026-10-02 21:29:15,success,240,NA
+df_drought,2026-10-02 21:29:16,success,7,NA
+df_drought_hist,2026-10-02 21:29:17,success,175,NA
+df_stream_temp,2026-10-02 21:29:17,success,18556,NA
