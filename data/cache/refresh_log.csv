@@ -1,8 +1,8 @@
 dataset,timestamp,status,n_rows,message
-df_inflow,2026-10-06 21:56:45,success,52,NA
-df_consumption,2026-10-06 21:56:46,success,21,NA
-df_daily_mean,2026-10-06 21:56:47,success,13149,NA
-df_groundwater,2026-10-06 21:57:02,success,240,NA
-df_drought,2026-10-06 21:57:03,success,7,NA
-df_drought_hist,2026-10-06 21:57:04,success,175,NA
-df_stream_temp,2026-10-06 21:57:04,success,18660,NA
+df_inflow,2026-10-07 22:19:17,success,52,NA
+df_consumption,2026-10-07 22:19:18,success,21,NA
+df_daily_mean,2026-10-07 22:19:19,success,13149,NA
+df_groundwater,2026-10-07 22:19:40,success,240,NA
+df_drought,2026-10-07 22:19:40,success,7,NA
+df_drought_hist,2026-10-07 22:19:41,success,175,NA
+df_stream_temp,2026-10-07 22:19:42,success,18686,NA
