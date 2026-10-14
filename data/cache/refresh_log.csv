@@ -1,18 +1,8 @@
 dataset,timestamp,status,n_rows,message
-<<<<<<< HEAD
-inflow,2026-10-14 21:18:42,success,52,NA
-consumption,2026-10-14 21:18:44,success,21,NA
-daily_mean,2026-10-14 21:18:46,success,13149,NA
-groundwater,2026-10-14 21:19:03,success,240,NA
-drought,2026-10-14 21:19:05,success,7,NA
-drought_hist,2026-10-14 21:19:06,success,175,NA
-stream_temp,2026-10-14 21:19:07,success,18868,NA
-=======
-df_inflow,2026-10-14 21:00:40,failure,NA,Data table tab was activated but no <table> was found inside it.
-df_consumption,2026-10-14 21:00:41,success,21,NA
-df_daily_mean,2026-10-14 21:00:42,success,13149,NA
-df_groundwater,2026-10-14 21:01:42,failure,NA,cannot open the connection to 'https://bcmoe-prod.aquaticinformatics.net/Export/BulkExport?DateRange=Days7&TimeZone=0&Calendar=CALENDARYEAR&Interval=Daily&Step=1&ExportFormat=csv&TimeAligned=True&RoundData=True&IncludeGradeCodes=False&IncludeApprovalLevels=True&IncludeQualifiers=True&IncludeInterpolationTypes=False&IncludeNotes=undefined&Datasets[0].DatasetName=SGWL.Working%40OW407&Datasets[0].Calculation=Aggregate&Datasets[0].UnitId=306&Datasets[1].DatasetName=SGWL.Working%40OW404&Datasets[1].Calculation=Aggregate&Datasets[1].UnitId=306&Datasets[2].DatasetName=SGWL.Working%40OW403&Datasets[2].Calculation=Aggregate&Datasets[2].UnitId=306&Datasets[3].DatasetName=SGWL.Working%40OW409&Datasets[3].Calculation=Aggregate&Datasets[3].UnitId=306&Datasets[4].DatasetName=SGWL.Working%40OW411&Datasets[4].Calculation=Aggregate&Datasets[4].UnitId=306&Datasets[5].DatasetName=SGWL.Working%40OW410&Datasets[5].Calculation=Aggregate&Datasets[5].UnitId=306&Datasets[6].DatasetName=SGWL.Working%40OW442&Da
-df_drought,2026-10-14 21:01:43,success,7,NA
-df_drought_hist,2026-10-14 21:01:44,success,175,NA
-df_stream_temp,2026-10-14 21:01:45,success,18868,NA
->>>>>>> c0fa54bcbef4ffa7036cf567b2f0d6ee9f45ac48
+inflow,2026-10-14 21:36:00,success,52,NA
+consumption,2026-10-14 21:36:00,success,21,NA
+daily_mean,2026-10-14 21:36:02,success,13149,NA
+groundwater,2026-10-14 21:36:47,success,240,NA
+drought,2026-10-14 21:36:48,success,7,NA
+drought_hist,2026-10-14 21:36:49,success,175,NA
+stream_temp,2026-10-14 21:36:50,success,18868,NA
