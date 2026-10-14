@@ -26,7 +26,7 @@ source("R/data_helpers.R")
 # data/cache/refresh_log.csv for a history of refresh attempts).
 
 #OBWB INFLOWS DATA FRAME ----------------------------------------------
-df_inflow <- read_cache_csv("df_inflow")
+df_inflow <- read_cache_csv("inflow")
 df_inflow$`Week ending` <- as.Date(df_inflow$`Week ending`)
 
 latest <- df_inflow |>
@@ -39,7 +39,7 @@ diff <- current - average
 status <- if (diff >= 0) "higher" else "lower"
 
 #WATER CONSUMPTION DATA FRAME ------------------------------------------------------------------
-df_consumption <- read_cache_csv("df_consumption")
+df_consumption <- read_cache_csv("consumption")
 #Converting multiple year columns to one single column
 df_consumption_long <- df_consumption |>
   pivot_longer(
@@ -50,11 +50,11 @@ df_consumption_long <- df_consumption |>
 df_consumption_long$Year <- gsub("_VOL_m³", "", df_consumption_long$Year)
 
 #DAILY MEAN OF OKANAGAN LAKE LEVEL DATA FRAME 1990-current--------------------------------------
-df_daily_mean <- read_cache_csv("df_daily_mean")
+df_daily_mean <- read_cache_csv("daily_mean")
 df_daily_mean$DATE <- as.Date(df_daily_mean$DATE)
 
 #GROUND WATER MAP DATA FRAME ------------------------------------------------------------------
-df_groundwater <- read_cache_csv("df_groundwater")
+df_groundwater <- read_cache_csv("groundwater")
 
 #Read in well locations.csv (static reference data, not part of the daily refresh)
 well_locations <- read_csv(
@@ -83,13 +83,13 @@ df_map_sf <- st_as_sf(
 )
 
 #DROUGHT MAP DATA FRAME  ---------------------------------------------------------
-df_drought <- read_cache_rds("df_drought")
+df_drought <- read_cache_rds("drought")
 
 #HISTORICAL DROUGHT DATA FRAME ---------------------------------------------------------------------
-df_drought_hist <- read_cache_csv("df_drought_hist")
+df_drought_hist <- read_cache_csv("drought_hist")
 
 #STREAM THERMAL STATE DATA FRAME --------------------------------------------------
-df_stream_temp <- read_cache_csv("df_stream_temp")
+df_stream_temp <- read_cache_csv("stream_temp")
 
 #FRASER AND COLUMBIA RIVER BASIN MAP -------------------------------------------------------------------
 # Static local shapefile - not part of the scheduled refresh.

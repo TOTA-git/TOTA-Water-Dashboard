@@ -133,6 +133,7 @@ ui <- dashboardPage(
           width = "100%",
           style = "position: relative;"
         ),
+        p("Destination BC/Andrew Strain"),
         
         fluidRow(
             width = "100%",
@@ -262,6 +263,7 @@ ui <- dashboardPage(
                 width = "70%",
                 style = "display: block; margin: 0 auto;"
               ),
+              
               
               tags$p(
                 "Source: Okanagan Basin Water Board (OBWB). Okanagan Basin Map. Retrieved from https://obwb.ca/basin_map/",

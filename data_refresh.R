@@ -104,27 +104,27 @@ fetch_inflow <- function() {
 }
 
 refresh_dataset(
-  "df_inflow",
+  "inflow",
   fetch_inflow,
-  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "df_inflow.csv"))
+  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "inflow.csv"))
 )
 
 # WATER CONSUMPTION (Google Sheet is manually updated but automatically refreshed) ------------------------------------------
 refresh_dataset(
-  "df_consumption",
+  "consumption",
   function() {
     read_csv(
       Sys.getenv("GOOGLE_SHEET_CONSUMPTION_URL"),
       show_col_types = FALSE
     )
   },
-  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "df_consumption.csv"))
+  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "consumption.csv"))
 )
 
 
 # OKANAGAN LAKE DAILY MEAN LEVEL (weather.gc.ca API, paginated) -------------
 refresh_dataset(
-  "df_daily_mean",
+  "daily_mean",
   function() {
     limit <- 10000
     offset <- 0
@@ -153,22 +153,22 @@ refresh_dataset(
         DayOfYear = yday(DATE)
       )
   },
-  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "df_daily_mean.csv"))
+  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "daily_mean.csv"))
 )
 
 # GROUNDWATER WELLS (BC MOE bulk export, one pull per well for the map) -----
 refresh_dataset(
-  "df_groundwater",
+  "groundwater",
   function() {
     well_ids <- read_csv("data/well locations.csv", show_col_types = FALSE)$Well
     import_wells(well_ids)
   },
-  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "df_groundwater.csv"))
+  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "groundwater.csv"))
 )
 
 # DROUGHT LEVELS (ArcGIS FeatureServer, current snapshot) -------------------
 refresh_dataset(
-  "df_drought",
+  "drought",
   function() {
     drought_url <- "https://services1.arcgis.com/xeMpV7tU1t4KD3Ei/arcgis/rest/services/British_Columbia_Drought_Levels_(Edit)_view/FeatureServer/27/query?f=geojson&where=(BasinName%20IN%20('Okanagan'%2C%20'South%20Thompson'%2C%20'North%20Thompson'%2C%20'Lower%20Thompson'%2C%20'Kettle%20River'%2C%20'Nicola'%2C%20'Similkameen'))&outFields=*"
     resp <- GET(drought_url)
@@ -184,12 +184,12 @@ refresh_dataset(
     )
     df
   },
-  function(df) atomic_write_rds(df, file.path(CACHE_DIR, "df_drought.rds"))
+  function(df) atomic_write_rds(df, file.path(CACHE_DIR, "drought.rds"))
 )
 
 # HISTORICAL DROUGHT LEVELS (Google Sheet is manually updated but automatically refreshed) ----------------------------------
 refresh_dataset(
-  "df_drought_hist",
+  "drought_hist",
   function() {
     read_csv(
       Sys.getenv("GOOGLE_SHEET_DROUGHT_URL"),
@@ -208,12 +208,12 @@ refresh_dataset(
       select(BasinName, Start_Date, DroughtLevel) |>
       arrange(BasinName, Start_Date)
   },
-  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "df_drought_hist.csv"))
+  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "drought_hist.csv"))
 )
 
 # STREAM THERMAL STATE (daily zip download) ---------------------------------
 refresh_dataset(
-  "df_stream_temp",
+  "stream_temp",
   function() {
     tmp_zip <- tempfile(fileext = ".zip")
     tmp_dir <- tempfile()
@@ -229,7 +229,7 @@ refresh_dataset(
     unzip(zipfile = tmp_zip, exdir = tmp_dir)
     read.csv(file.path(tmp_dir, "stream_temperature_daily.csv"))
   },
-  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "df_stream_temp.csv"))
+  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "stream_temp.csv"))
 )
 
 message("Data refresh complete. See ", file.path(CACHE_DIR, "refresh_log.csv"), " for a run history.")
