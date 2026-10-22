@@ -1,0 +1,221 @@
+station_id,station_name,basin,year,n_mean_days,n_max_days,julaug_mean_c,mwmt_c,days_max_gt19,days_mean_gt21,air_julaug_mean_c
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2003,60,60,22.394,25.178,60,52,22.444
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2004,58,58,23.122,25.739,58,58,22.048
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2005,62,62,21.667,24.158,62,42,20.998
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2006,62,62,22.542,25.985,62,59,21.166
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2007,62,62,21.912,24.783,62,46,21.258
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2008,61,61,21.543,23.916,61,42,20.894
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2009,62,62,22.315,25.465,62,50,22.118
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2010,58,58,21.654,24.086,58,40,20.832
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2011,60,60,20.687,23.248,56,29,20.358
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2012,62,62,21.953,24.48,57,47,NA
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2013,62,62,22.966,25.526,62,61,21.797
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2014,62,62,23.221,25.453,62,61,22.273
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2015,59,59,23.38,25.798,59,57,22.073
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2016,62,62,21.967,24.544,62,51,20.616
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2017,62,62,22.104,23.563,62,56,22.016
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2018,62,62,22.031,24.894,59,43,20.92
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2019,62,62,21.764,23.691,62,48,20.638
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2020,62,62,21.741,24.344,61,45,20.514
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2021,58,58,23.426,25.86,58,49,22.711
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2022,62,62,22.984,26.403,61,49,22.714
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2023,62,62,22.823,25.313,62,56,22.448
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2024,62,62,23.464,27.303,62,53,22.861
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2025,62,62,22.696,24.82,62,62,22.66
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2026,62,0,22.31,NA,NA,58,21.889
+08NM037,Shatford Creek Near Penticton,Okanagan,2020,62,62,12.029,16.614,0,0,NA
+08NM037,Shatford Creek Near Penticton,Okanagan,2021,60,60,14.281,18.057,2,0,NA
+08NM037,Shatford Creek Near Penticton,Okanagan,2022,62,62,12.687,17,0,0,NA
+08NM037,Shatford Creek Near Penticton,Okanagan,2023,62,62,13.621,17.014,0,0,NA
+08NM037,Shatford Creek Near Penticton,Okanagan,2024,62,62,13.856,18.257,0,0,NA
+08NM037,Shatford Creek Near Penticton,Okanagan,2025,62,62,13.877,17.043,0,0,NA
+08NM037,Shatford Creek Near Penticton,Okanagan,2026,62,0,13.749,NA,NA,0,NA
+08NM050,Okanagan River at Penticton,Okanagan,2017,62,62,22.104,23.563,62,56,NA
+08NM050,Okanagan River at Penticton,Okanagan,2018,62,62,22.364,25.953,59,45,NA
+08NM050,Okanagan River at Penticton,Okanagan,2019,62,62,22.577,25.233,62,59,NA
+08NM050,Okanagan River at Penticton,Okanagan,2020,62,62,22.443,25.226,61,47,NA
+08NM050,Okanagan River at Penticton,Okanagan,2021,34,34,NA,NA,NA,NA,NA
+08NM050,Okanagan River at Penticton,Okanagan,2022,62,62,23.56,27.144,62,52,NA
+08NM050,Okanagan River at Penticton,Okanagan,2023,62,62,23.535,25.833,62,61,NA
+08NM050,Okanagan River at Penticton,Okanagan,2024,62,62,23.985,28.573,58,52,NA
+08NM050,Okanagan River at Penticton,Okanagan,2025,62,62,23.312,25.414,62,61,NA
+08NM050,Okanagan River at Penticton,Okanagan,2026,62,0,22.919,NA,NA,59,NA
+08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2024,62,62,22.848,27.471,62,53,NA
+08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2025,62,62,22.15,25.671,62,55,NA
+08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2026,62,0,20.735,NA,NA,28,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2003,60,60,21.354,23.729,60,38,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2004,58,58,21.611,24.219,58,43,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2005,62,62,20.838,23.409,60,34,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2006,62,62,21.433,24.199,62,40,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2007,62,62,20.898,23.666,60,30,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2008,61,61,20.093,22.168,56,13,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2009,62,62,20.505,23.595,52,25,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2010,61,61,20.096,22.394,51,22,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2011,58,58,19.237,21.83,34,13,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2012,62,62,20.786,23.251,55,32,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2013,45,45,NA,NA,NA,NA,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2014,62,62,21.544,22.841,55,45,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2015,62,62,22.469,24.703,62,60,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2016,62,62,20.621,23.911,58,33,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2017,62,62,21.016,23.749,60,36,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2018,62,62,20.887,24.536,57,30,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2019,43,43,NA,NA,NA,NA,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2020,62,62,20.673,23.703,52,36,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2021,62,62,22.696,26.083,62,50,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2022,61,61,22.731,26.271,60,49,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2023,51,51,NA,NA,NA,NA,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2024,62,62,22.604,26.014,60,48,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2025,62,62,21.893,23.686,62,48,NA
+08NM083,Okanagan Lake at Kelowna,Okanagan,2026,62,0,21.762,NA,NA,46,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2003,45,45,NA,NA,NA,NA,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2004,62,62,23.836,26.979,62,62,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2005,62,62,22.671,25.514,62,60,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2006,62,62,23.532,27.404,62,61,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2007,5,5,NA,NA,NA,NA,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2008,60,60,21.901,24.614,60,49,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2009,62,62,22.561,26.686,62,52,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2010,62,62,21.965,25.186,62,47,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2011,60,60,20.924,24.257,59,30,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2012,62,62,22.276,25.171,60,50,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2013,62,62,22.853,26.343,62,59,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2014,62,62,23.07,26.357,62,59,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2015,62,62,22.835,26.529,62,52,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2016,62,62,22.028,25.029,62,55,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2017,62,62,22.294,24.2,62,60,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2018,62,62,21.503,25.21,60,41,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2019,62,62,21.961,24.59,62,53,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2020,62,62,21.912,25.39,62,41,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2021,62,62,23.298,27.757,62,51,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2022,62,62,23.224,27.293,62,52,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2023,62,62,22.688,26.19,62,53,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2024,61,61,23.411,27.629,61,52,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2025,62,62,23.034,25.857,62,62,NA
+08NM085,Okanagan River Near Oliver,Okanagan,2026,62,0,22.583,NA,NA,60,NA
+08NM116,Mission Creek Near East Kelowna,Okanagan,2016,0,0,NA,NA,NA,NA,19.52
+08NM116,Mission Creek Near East Kelowna,Okanagan,2017,42,42,NA,NA,NA,NA,NA
+08NM116,Mission Creek Near East Kelowna,Okanagan,2018,35,35,NA,NA,NA,NA,NA
+08NM116,Mission Creek Near East Kelowna,Okanagan,2019,62,62,17.291,23.8,37,0,19.52
+08NM116,Mission Creek Near East Kelowna,Okanagan,2020,62,62,16.997,25,42,5,19.278
+08NM116,Mission Creek Near East Kelowna,Okanagan,2021,60,60,20.181,27.157,57,29,21.528
+08NM116,Mission Creek Near East Kelowna,Okanagan,2022,62,62,18.305,25.414,50,7,21.8
+08NM116,Mission Creek Near East Kelowna,Okanagan,2023,62,62,19.251,25.214,55,10,21.002
+08NM116,Mission Creek Near East Kelowna,Okanagan,2024,62,62,19.871,27.671,52,22,21.748
+08NM116,Mission Creek Near East Kelowna,Okanagan,2025,62,62,19.954,25.7,62,17,21.234
+08NM116,Mission Creek Near East Kelowna,Okanagan,2026,62,0,20.886,NA,NA,30,21.125
+08NM139,Esperon Creek Near Kelowna,Okanagan,2024,62,62,12.533,16.666,0,0,NA
+08NM139,Esperon Creek Near Kelowna,Okanagan,2025,62,62,12.24,15.713,0,0,NA
+08NM139,Esperon Creek Near Kelowna,Okanagan,2026,51,0,NA,NA,NA,NA,NA
+08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2019,62,62,21.582,24.212,62,47,NA
+08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2020,62,62,21.252,24.671,54,39,NA
+08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2021,62,62,22.82,25.395,62,53,NA
+08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2022,62,62,23.069,26.329,61,52,NA
+08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2024,62,62,22.841,26.729,60,52,NA
+08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2025,62,62,22.368,24.614,62,58,NA
+08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2026,62,0,22.283,NA,NA,56,NA
+08NM149,Shuttleworth Creek at the Mouth,Okanagan,2006,8,8,NA,NA,NA,NA,NA
+08NM149,Shuttleworth Creek at the Mouth,Okanagan,2007,42,42,NA,NA,NA,NA,NA
+08NM149,Shuttleworth Creek at the Mouth,Okanagan,2009,5,5,NA,NA,NA,NA,NA
+08NM158,Trout Creek at the Mouth,Okanagan,2022,62,62,18.366,23.986,50,4,NA
+08NM158,Trout Creek at the Mouth,Okanagan,2024,62,62,19.304,24.8,52,16,NA
+08NM158,Trout Creek at the Mouth,Okanagan,2025,62,62,19.868,25.089,62,14,NA
+08NM158,Trout Creek at the Mouth,Okanagan,2026,62,0,19.648,NA,NA,11,NA
+08NM160,Vernon Creek Near the Mouth,Okanagan,2024,62,62,19.336,22.757,52,13,NA
+08NM160,Vernon Creek Near the Mouth,Okanagan,2025,62,62,17.631,20.257,35,0,NA
+08NM160,Vernon Creek Near the Mouth,Okanagan,2026,62,0,15.775,NA,NA,0,NA
+08NM165,Lambly Creek above Terrace Creek,Okanagan,2024,62,62,14.273,18.957,3,0,NA
+08NM165,Lambly Creek above Terrace Creek,Okanagan,2025,62,62,13.831,16.929,0,0,NA
+08NM165,Lambly Creek above Terrace Creek,Okanagan,2026,62,0,14.207,NA,NA,0,NA
+08NM171,Vaseux Creek above Solco Creek,Okanagan,2024,62,62,11.729,15.6,0,0,NA
+08NM171,Vaseux Creek above Solco Creek,Okanagan,2025,62,62,11.902,14.029,0,0,NA
+08NM171,Vaseux Creek above Solco Creek,Okanagan,2026,62,0,12.09,NA,NA,0,NA
+08NM172,Pearson Creek Near the Mouth,Okanagan,2021,62,62,13.99,17.829,2,0,NA
+08NM172,Pearson Creek Near the Mouth,Okanagan,2022,62,62,12.157,15.486,0,0,NA
+08NM172,Pearson Creek Near the Mouth,Okanagan,2024,62,62,12.782,15.586,0,0,NA
+08NM172,Pearson Creek Near the Mouth,Okanagan,2025,62,62,12.743,14.4,0,0,NA
+08NM172,Pearson Creek Near the Mouth,Okanagan,2026,62,0,13.228,NA,NA,0,NA
+08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2024,62,62,16.351,21.629,29,0,NA
+08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2025,62,62,15.804,19.929,22,0,NA
+08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2026,62,0,15.777,NA,NA,0,NA
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2006,45,45,NA,NA,NA,NA,21.166
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2007,62,62,19.057,23.443,48,7,21.258
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2008,61,61,16.819,22.714,45,0,20.894
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2009,62,62,18.531,24.657,55,7,22.118
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2010,62,62,16.823,21.929,41,0,20.832
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2011,60,60,15.419,20.2,17,0,20.358
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2012,0,0,NA,NA,NA,NA,NA
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2013,62,62,17.515,22.271,47,0,21.797
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2014,62,62,18.225,22.9,51,0,22.273
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2015,62,62,18.862,23.129,51,4,22.073
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2016,62,62,17.043,21.971,47,0,20.616
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2017,62,62,17.863,21.914,61,0,22.016
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2018,36,36,NA,NA,NA,NA,20.92
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2019,62,62,18.972,24.56,62,1,20.638
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2020,62,62,18.04,24.681,51,3,20.514
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2021,62,62,20.419,27.05,60,33,22.711
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2022,62,62,19.009,26.133,53,12,22.714
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2023,62,62,19.6,25.113,60,10,22.448
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2024,62,62,20.31,26.843,62,29,22.861
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2025,62,0,20.649,NA,NA,23,22.66
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2026,62,0,20.245,NA,NA,19,21.889
+08NM232,Belgo Creek Below Hilda Creek,Okanagan,2024,62,62,12.264,14.929,0,0,NA
+08NM232,Belgo Creek Below Hilda Creek,Okanagan,2025,62,62,13.389,17.271,0,0,NA
+08NM232,Belgo Creek Below Hilda Creek,Okanagan,2026,62,0,15.832,NA,NA,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2017,62,62,10.029,12.114,0,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2018,60,60,9.74,12.329,0,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2019,62,62,9.121,11.071,0,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2020,60,60,8.592,11.257,0,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2021,62,62,10.917,13.114,0,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2022,62,62,9.888,12.571,0,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2023,62,62,10.183,12.714,0,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2024,61,61,10.153,12.657,0,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2025,62,61,10.24,11.9,0,0,NA
+08NM240,Two Forty Creek Near Penticton,Okanagan,2026,62,0,10.332,NA,NA,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2016,1,1,NA,NA,NA,NA,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2017,62,62,13.201,29.786,37,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2018,62,62,11.89,25.057,14,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2019,62,62,9.74,16,0,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2020,62,62,9.872,16.843,0,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2021,60,60,12.685,27.943,34,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2022,62,62,11.044,17.829,0,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2023,62,62,11.535,27.4,16,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2024,62,62,10.976,17.7,0,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2025,62,62,10.774,15.757,0,0,NA
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2026,62,0,11.796,NA,NA,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2016,62,62,10.737,14.371,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2017,62,62,11.264,14.929,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2018,62,62,10.711,14.771,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2019,62,62,8.79,12.257,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2020,62,62,8.593,13.7,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2021,62,62,10.572,15.6,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2022,62,62,9.768,14.457,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2023,62,62,9.572,12.871,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2024,62,62,9.728,14.543,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2025,62,62,9.641,12.671,0,0,NA
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2026,62,0,9.987,NA,NA,0,NA
+08NM246,Vaseux Creek Near the Mouth,Okanagan,2006,1,1,NA,NA,NA,NA,NA
+08NM246,Vaseux Creek Near the Mouth,Okanagan,2008,14,14,NA,NA,NA,NA,NA
+08NM246,Vaseux Creek Near the Mouth,Okanagan,2009,27,27,NA,NA,NA,NA,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2012,62,62,22.875,24.829,61,54,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2013,62,62,23.719,26.171,62,62,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2014,62,62,24.043,26.429,62,62,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2015,62,62,23.96,26.414,62,60,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2016,62,62,22.76,24.857,62,62,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2017,62,62,22.733,24.186,62,60,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2018,62,62,22.506,25.514,62,49,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2019,62,62,23.142,25.026,62,62,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2020,43,43,NA,NA,NA,NA,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2021,61,61,23.899,27.343,61,52,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2022,62,62,23.31,26.714,62,52,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2024,46,46,NA,NA,NA,NA,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2025,62,62,23.181,25.071,62,62,NA
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2026,62,0,22.804,NA,NA,62,NA
+08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2021,62,62,13.64,16.671,0,0,NA
+08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2024,62,62,14.253,17.386,0,0,NA
+08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2025,62,62,13.509,16,0,0,NA
+08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2026,62,0,14.422,NA,NA,0,NA
+08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2024,62,62,16.67,19.671,16,0,NA
+08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2025,62,62,16.468,19.071,7,0,NA
+08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2026,62,0,18.711,NA,NA,10,NA
+08NM250,Vernon Creek at Swalwell Park,Okanagan,2024,62,62,19.348,24.457,48,12,NA
+08NM250,Vernon Creek at Swalwell Park,Okanagan,2025,62,62,18.565,21.114,43,0,NA
+08NM250,Vernon Creek at Swalwell Park,Okanagan,2026,62,0,19.303,NA,NA,11,NA

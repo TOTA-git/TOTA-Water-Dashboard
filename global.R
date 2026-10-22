@@ -15,6 +15,7 @@ library(geojsonsf)
 library(googlesheets4)
 library(sf)
 library(fresh)
+library(stringr)
 
 source("R/data_helpers.R")
 
@@ -29,8 +30,8 @@ source("R/data_helpers.R")
 df_inflow <- read_cache_csv("inflow")
 df_inflow$`Week ending` <- as.Date(df_inflow$`Week ending`)
 
-latest <- df_inflow |>
-  filter(!is.na(`Current (ac-ft)`)) |>
+latest <- df_inflow %>%
+  filter(!is.na(`Current (ac-ft)`)) %>%
   slice_max(`Week ending`, n = 1)
 
 current <- latest$`Current (ac-ft)`
@@ -41,7 +42,7 @@ status <- if (diff >= 0) "higher" else "lower"
 #WATER CONSUMPTION DATA FRAME ------------------------------------------------------------------
 df_consumption <- read_cache_csv("consumption")
 #Converting multiple year columns to one single column
-df_consumption_long <- df_consumption |>
+df_consumption_long <- df_consumption %>%
   pivot_longer(
     cols = ends_with("VOL_m³"),
     names_to = "Year",
@@ -61,6 +62,9 @@ well_locations <- read_csv(
   "data/well locations.csv",
   show_col_types = FALSE
 )
+
+#THOMPSON OKANAGAN BOUNDS----------------------------------------------------------------------
+df_TO_boundary <- st_read("data/thompson_okanagan_boundary.geojson", quiet = TRUE)
 
 #Add Lat, Long, & Status to df_groundwater
 df_groundwater <- left_join(
@@ -82,15 +86,30 @@ df_map_sf <- st_as_sf(
   remove = FALSE
 )
 
-#DROUGHT MAP DATA FRAME  ---------------------------------------------------------
+#DROUGHT MAP -------------------------------------------------------------------------------
 df_drought <- read_cache_rds("drought")
 
-#HISTORICAL DROUGHT DATA FRAME ---------------------------------------------------------------------
+#HISTORICAL DROUGHT  -------------------------------------------------------------------------
 df_drought_hist <- read_cache_csv("drought_hist")
 
-#STREAM THERMAL STATE DATA FRAME --------------------------------------------------
+#STREAM THERMAL STATE 577 DAY ROLLING WINDOW ----------------------------------------------------------
 df_stream_temp <- read_cache_csv("stream_temp")
+
+df_stream_temp$year <- format(as.Date(df_stream_temp$date, format="%-/%m-%d"),"%Y")
+
+#STREAM STATION META DATA ------------------------------------------------------------------------------
+df_station_meta <- read_cache_csv("station_metadata")
+
+#STREAM TEMP MASTER 2002 - PRESENT -----------------------------------------------------------
+df_stream_master <- read_cache_csv("stream_temp_master")
+df_stream_master$year <- format(as.Date(df_stream_master$date, format="%-/%m-%d"),"%Y")
+
+#STREAM TEMP MEAN FROM JUL & AUG -------------------------------------------------------------
+df_stream_summer <- read_cache_csv("stream_summer")
 
 #FRASER AND COLUMBIA RIVER BASIN MAP -------------------------------------------------------------------
 # Static local shapefile - not part of the scheduled refresh.
 df_river <- st_read("data/rivers.shp")
+
+#BC BOUNDARY -------------------------------------------------------------------------------------------
+df_bc <- st_read("data/bc_boundary.geojson", quiet = TRUE)

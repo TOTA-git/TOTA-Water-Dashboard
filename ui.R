@@ -1,11 +1,11 @@
-library(shiny)
-library(shinydashboard)
-library(jsonlite)
-library(bslib)
-
-TOTA_theme <- create_theme(
+#THEME ----------------------------------------------------------------------------------------------------------
+TOTA_theme <- create_theme( #Set colours
   adminlte_color(
-    light_blue = "#004B55"
+    light_blue = "#004B55",
+    yellow = "#BCB49E",
+    orange = "#F6BC1A",
+    teal = "#76ACA9",
+    fuchsia = "#D11B4A"
   )
 )
 
@@ -172,8 +172,8 @@ ui <- dashboardPage(
               br(),
               style = "font-size: 18px;",
               br()
-
             ),
+            
          fluidRow(   
             column(
               tags$head(
@@ -264,14 +264,11 @@ ui <- dashboardPage(
                 style = "display: block; margin: 0 auto;"
               ),
               
-              
               tags$p(
                 "Source: Okanagan Basin Water Board (OBWB). Okanagan Basin Map. Retrieved from https://obwb.ca/basin_map/",
                 style = "font-size: 12px; color: #777; text-align: center; padding-top: 2%;"
               )
-              
             ),
-            
             style = "width: 100%; padding: 20px; font-size: 18px;"
          ),
         ),
@@ -290,51 +287,46 @@ ui <- dashboardPage(
           box(
             title = "Water Supply - Is the lake receiving enough water?",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
-            p("Net inflow tells us how much water is being added to Okanagan Lake (station 08NM083) each week after accounting for water released downstream at Okanagan
-                      River at Penticton (station 08NM050). 
-                      Comparing current conditions with the historical average helps show whether the lake is receiving more or less water than usual."),
+            p(paste0("Net inflow measures how much water is added to Okanagan Lake each week after accounting for water released 
+                     downstream through the Okanagan River at Penticton (station 08NM050). Comparing current inflows with the historical
+                     average helps show whether the lake is receiving more or less water than usual. Okanagan Lake levels naturally 
+                     fluctuate throughout the year in response to snowmelt, precipitation, inflows, outflows, and evaporation. Comparing
+                     daily mean lake levels from the most recent available year, with historical years provides context for current water
+                     conditions. Station 08NM083 (Okanagan Lake) uses an assumed datum, meaning its zero point is an arbitrary reference established
+                     for the gauge rather than a fixed elevation above sea level. For example, a recorded level of 1.4 m indicates that the water
+                     surface is 1.4 metres above the station's reference point.")),
             style = "font-size: 18px;"
           ),
           
-      
-          
+          valueBoxOutput("MaxLevel", width = 3),
+          valueBoxOutput("MinLevel", width = 3),
+          valueBoxOutput("YoYMinLevel", width = 3),
+          valueBoxOutput("InflowValueBox", width = 3),
+
           box(
-            title = "Okanagan Lake Net Inflows",
+            title = paste0("Weekly Net Inflow to Okanagan Lake: Current Water Year ", format(min(df_inflow$`Week ending`), "%Y"), "/", format(max(df_inflow$`Week ending`), "%Y")),
             solidHeader = TRUE,
-            collapsible = TRUE,
-            width = 12, 
-           
-            plotOutput("netInflowPlot", height = 600),
-            p(paste0(
-              "Net inflow for the week ending ", format(latest$`Week ending`, "%B %d, %Y"),
-              " is ", scales::comma(current), " — that's ", scales::comma(round(abs(diff))), " ac-ft ", status,
-              " than the 1944–2025 historical average (", scales::comma(round(average)),
-              " ac-ft) for this time of year."
-            )),
-            style = "font-size: 19px;"
+            width = 12,
+            plotlyOutput("netInflowPlot", height = 600),
+            footer = paste0("Net inflow for the week ending ", format(latest$`Week ending`, "%B %d, %Y"),
+                                   " is ", scales::comma(current), " — that's ", scales::comma(round(abs(diff))), " ac-ft ", status,
+                                   " than the 1944–2025 historical average (", scales::comma(round(average)),
+                                   " ac-ft) for this time of year."),
+            style = "font-size: 16px;"
           ),
           
           box(
-            title = "Historic Vs Recent Mean",
+            title = "Daily Mean Water Level of Okanagan Lake",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
-            plotOutput("HistoricalDailyPlot" , height = 600),
-            p(paste0("Okanagan Lake levels naturally fluctuate throughout the year because of snowmelt, precipitation, inflows, outflows, and evaporation.
-                       Comparing the most recent available year ", max(df_daily_mean$Year), " with historic years provides context for current water conditions. 
-                       The daily mean values shown represent the average lake level.")),
-            p("Station 08NM083 (Okanagan Lake) is listed as ASSUMED DATUM, this means the station's zero point 
-                is an arbitrary reference established for that gauge. A value like 1.4 m means the water surface was 1.4 m above the stations 
-                assumed zero."),
-            style = "font-size: 18px;"
+            plotlyOutput("HistoricalDailyPlot" , height = 600),
+            style = "font-size: 16px;"
            ),
           
           box(
             title = "References & Data",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12, 
             p("Okanagan Basin Water Board, & Jatel, N. (2026). Okanagan Lake weekly net inflow: 
               current water year versus the 1944–2025 average [Interactive figure]. 
@@ -357,21 +349,24 @@ ui <- dashboardPage(
             #ConsumptionPlot { height: 350px !important; }
             #WaterSourcePlot { height: 350px !important; }
             #ProvidersPlot { height: 425px !important; }
-          }
-        ")),
+          }"
+        )),
         
         fluidRow(
           box(
             width = 12,
             title = "Water Consumption - How much water are we using?",
             solidHeader = TRUE,
-            collapsible = TRUE,
             column(
               width = 10,
+              p("The Okanagan watershed serves as a valuable pilot area for 
+                understanding water comsumption within the broader Thompson-Okanagan region. While the Thompson-Okanagan is a large and geographically 
+                diverse tourism region, the Okanagan provides a clearly defined watershed where communities, water systems, ecosystems, agriculture 
+                and tourism are closely connected. Although there are approximately 300 water utilities in the Okanagan,
+                the largest 10 utilities supply approximately 90% of the region's water"),
               p("Water entering the Okanagan watershed does not all become available for human use. 80% of precipitation is 
               returned to the atmosphere through evapotranspiration and lake evaporation, while the remaining 20% contributes 
               to groundwater recharge (7%) and surface flows (13%)."),
-              br(),
               p("Communities, businesses, agriculture, ecosystems, and tourism all depend on the region’s limited water supply. 
                 Municipal water systems support homes, businesses, accommodations, restaurants, attractions, and other tourism-related services,
                 while the region’s lakes, rivers, landscapes, and agricultural areas are themselves important tourism assets. Tracking 
@@ -395,56 +390,66 @@ ui <- dashboardPage(
             )
           ),
           
+          infoBox(
+            title = "",
+            width = 6,
+            color = "light-blue",
+            icon = icon("filter"),
+            value = div(
+              selectInput(
+                "year_consumption",
+                "Select Year:",
+                choices = sort(unique(df_consumption_long$Year)),
+                selected = max(df_consumption_long$Year)
+              )
+            )
+          ),
+          
+          infoBox(
+            title = "Data Last Modified",
+            width = 6,
+            color = "light-blue",
+            icon = icon("clock-rotate-left"),
+            value = format(file.info("data/cache/consumption.csv")$mtime, "%B %d, %Y"),
+            subtitle = "Data Updated Manually by TOTA."
+          ),
+          
+          valueBoxOutput("TotalVol", width = 4),
+          valueBoxOutput("TopProvider", width = 4),
+          valueBoxOutput("TopSource", width = 4),
+          
+          box(
+            title = "Compare Providers",
+            solidHeader = TRUE,
+            width = 12,
+            selectInput(
+                "provider",
+                "Select Providers:",
+                choices = sort(unique(df_consumption_long$MUN_NAME)),
+                multiple = TRUE,
+                selected = sort(unique(df_consumption_long$MUN_NAME))
+            ),
+            plotlyOutput("ProvidersPlot", height = 600)
+          ),
+          
           box(
             title = "Water Consumption Per Year",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             padding = 2,
-            plotOutput("ConsumptionPlot", height = 500)
+            plotlyOutput("ConsumptionPlot", height = 500)
           ),
           
           box(
             title = paste0("Water Source Types Across ", count(df_consumption), " Providers"),
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             plotOutput("WaterSourcePlot")
           ),
           
           box(
-            title = "Compare Providers",
-            solidHeader = TRUE,
-            collapsible = TRUE,
-            width = 12,
-            
-            fluidRow(
-              column(
-                width = 3,
-                selectInput(
-                  "year",
-                  "Select Year:",
-                  choices = sort(unique(df_consumption_long$Year)),
-                  selected = "2024")
-              ),
-              
-              column(
-                width = 12,
-                selectInput(
-                  "provider",
-                  "Select Providers:",
-                  choices = sort(unique(df_consumption_long$MUN_NAME)),
-                  multiple = TRUE,
-                  selected = sort(unique(df_consumption_long$MUN_NAME)))
-              ),
-            ),
-            plotOutput("ProvidersPlot", height = 500)
-          ),
-          
-          box(
             title = "Methodology & Data",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             tags$ul(
               tags$li("This dashboard summarizes the best publicly available municipal water consumption data for the Okanagan Watershed."),
@@ -460,7 +465,6 @@ ui <- dashboardPage(
           box(
             title = "References",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             p("Samp, A. (2026). Okanagan Water Consumption dataset for the Okanagan Watershed [Data set]. Unpublished dataset.")
           )
@@ -482,18 +486,12 @@ ui <- dashboardPage(
           box(
             title = "Groundwater - What is happening to water below ground?",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
-            p("Groundwater is important to the region's tourism economy. Hotels, restaurants, wineries, golf courses and other tourism operations 
-              require reliable access to water, while lakes and stream are central to the outdoor experiences that attract visitors to the Thompson-Okanagan.
+            p("Groundwater is important to the Thompson Okanagan tourism economy. Hotels, restaurants, wineries, golf courses and other tourism operations 
+              require reliable access to water, while lakes and stream are central to the outdoor experiences that attract visitors to the region.
               Understanding and monitoring groundwater is particularly important for the region because it regularly experiences drought and water scarcity.
               During dry periods, groundwater can play an important role in supporting water supplies and maintaining flows in rivers and streams. 
               Long-term monitoring can help improve our understanding of changing groundwater conditions and the sustainability of this resource."),
-            p("The map below displays groundwater wells across the Okanagan watershed, The Okanagan watershed serves as a valuable pilot area for 
-              understanding water resources within the broader Thompson-Okanagan region. While the Thompson-Okanagan is a large and geographically 
-              diverse tourism region, the Okanagan Basin provides a clearly defined watershed where communities, water systems, ecosystems, 
-              agriculture and tourism are closely connected. Select a well to explore available information and better 
-              understand the distribution of groundwater use across the region."),
             p("More information and detailed well records can be found here ",
               tags$a(
                 href = "https://apps.nrs.gov.bc.ca/gwells/",
@@ -508,9 +506,8 @@ ui <- dashboardPage(
           ),
           
           box(
-            title = "Active Groundwater Wells in the Okanagan",
+            title = "Active Groundwater Wells in the Thompson Okangan Tourism Region",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 6,
             leafletOutput("WellPlot", height = 640)
           ),
@@ -518,7 +515,6 @@ ui <- dashboardPage(
           box(
             title = "Selected Well",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 6,
             plotOutput("ChangeOverTimePlot", height = 600),
             footer = "Select a well."
@@ -527,7 +523,6 @@ ui <- dashboardPage(
           box(
             title = paste0("Aquifer Types Across ", count(df_map), " Wells"),
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             plotOutput("WellTypePlot")
           ),
@@ -535,7 +530,6 @@ ui <- dashboardPage(
           box(
             title = "References & Data",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             p("Data source: Province of British Columbia. Groundwater Level Data Interactive Map (Provincial Groundwater Observation Well Network).
               Retrieved from https://governmentofbc.maps.arcgis.com/apps/webappviewer/index.html?id=b53cb0bf3f6848e79d66ffd09b74f00d"),
@@ -559,7 +553,6 @@ ui <- dashboardPage(
           box(
             title = "Drought - How dry is the region?",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             p("Drought conditions provide important context for understanding water availability across the region. The drought scale combines 
               information about water supply and environmental conditions to indicate the severity of drought."),
@@ -569,7 +562,6 @@ ui <- dashboardPage(
           box(
             title = "Current Drought Levels of Basins within the Thompson Okanagan Region",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 6,
             leafletOutput("DroughtPlot", height = 640)
           ),
@@ -577,7 +569,6 @@ ui <- dashboardPage(
           box(
             title = "Drought Scale",
             solidHeader = TRUE,
-            collapsible = TRUE,
             tags$img(
               src = "drought_scale.png",
               width = "100%"
@@ -588,7 +579,6 @@ ui <- dashboardPage(
           box(
             title = "Data",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 6,
             htmlOutput("DroughtTable")
           ),
@@ -599,7 +589,6 @@ ui <- dashboardPage(
                       " Drought Levels at a Glance"
                       ),
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             plotOutput("DroughtHistPlot", height = 500)
           ),
@@ -607,7 +596,6 @@ ui <- dashboardPage(
           box(
             title = "References & Data",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             p("Data source: Province of British Columbia. B.C. Drought Information Portal (British Columbia Drought Levels).
               Retrieved from https://droughtportal.gov.bc.ca/datasets/f1842161d9c2454a98f9fc3b45d5d92e_27/explore?location=54.149730%2C-126.557374%2C5"),
@@ -623,6 +611,8 @@ ui <- dashboardPage(
           @media (max-width: 600px) {
             #StreamStatePlot { height: 450px !important; }
             #RiverPlot { height: 300px !important; margin-top: 24px; }
+            #StreamLinePlot { height: 450px !important; }
+            #SummerTempHeatmap { height 450px !important; }
           }
         ")),
         
@@ -632,10 +622,8 @@ ui <- dashboardPage(
             title = "Stream State - What is happening in our fish habitats?",
             width = 12,
             solidHeader = TRUE,
-            collapsible = TRUE,
-            column(
-              width = 7,
-            p("Salmon connect communities, ecosystems and tourism across the Thompson Okanagan. The region spans two 
+            p("Salmon connect communities, ecosystems and tourism across the Thompson Okanagan. The Okanagan watershed is used as a pilot area 
+            to better understand stream state across the whole Thompson Okangan. The Okanagan spans two 
               major watersheds: the Fraser River and Columbia River. Water flowing north of Vernon generally drains 
               toward the Fraser River, while watersheds to the south drain toward the Columbia River. These connected 
               waterways provide important habitat for salmon and support the ecosystems, communities and tourism experiences
@@ -678,20 +666,57 @@ ui <- dashboardPage(
               )
             ),
             style = "font-size: 18px;"
-            ),
-            
-            column(
-              width = 5,
-              leafletOutput("RiverPlot", height = 600)
+          ),
+          
+          infoBox(
+            title = "",
+            width = 6,
+            color = "light-blue",
+            icon = icon("filter"),
+            value = div(
+              selectInput(
+                "year_stream",
+                "Select Year:",
+                choices = sort(unique(df_stream_master$year)),
+                selected = max(df_stream_master$year)
+              )
             )
           ),
           
-            box(
+          infoBox(
+            title = "Data Freshness",
+            width = 6,
+            color = "light-blue",
+            icon = icon("clock-rotate-left"),
+            value = format(max(df_station_meta$last_banked_date), "%B %d, %Y"),
+            subtitle = "Updated by Water Survey of Canada."
+          ),
+          
+          valueBoxOutput("numStations", width = 4),
+          valueBoxOutput("highestTemp", width = 4),
+          valueBoxOutput("over19", width = 4),
+          
+          uiOutput("StreamLinePlotBox", height = 500),
+          
+          box(
+            title = "July–August Mean Temperatures",
+            width = 12,
+            solidHeader = TRUE,
+            plotOutput("SummerTempHeatmap", height = 600)
+          ),
+          
+          box(
             title = "Okanagan Stream Thermal State",
             width = 12,
             solidHeader = TRUE,
-            collapsible = TRUE,
-            plotOutput("StreamStatePlot", height = 500),
+            leafletOutput("RiverPlot", height = 600)
+          ),
+          
+          box(
+            title = "Okanagan Weekly Mean Stream Temperature",
+            width = 12,
+            solidHeader = TRUE,
+            plotlyOutput("StreamStatePlot", height = 500),
             style = "font-size: 18px;"
           ),
           
@@ -699,7 +724,6 @@ ui <- dashboardPage(
             title = "References & Data",
             width = 12,
             solidHeader = TRUE,
-            collapsible = TRUE,
             p("Jatel, N. and Okanagan Basin Water Board (2026). Okanagan Stream Temperature Dataset. Distributed under CC-BY 4.0. https://temp.stream/.")
           )
         ),

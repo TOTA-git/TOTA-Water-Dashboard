@@ -24,6 +24,7 @@ library(sf)
 library(geojsonsf)
 library(rvest)
 library(chromote)
+library(readxl)
 
 source("R/data_helpers.R")
 
@@ -99,7 +100,7 @@ fetch_inflow <- function() {
     stop("Data table tab was activated but no <table> was found inside it.")
   }
 
-  html_table(tbl_node[[1]]) |>
+  html_table(tbl_node[[1]]) %>%
     setNames(c("Week ending", "Current (ac-ft)", "1944-2025 avg (ac-ft)", "% of average"))
 }
 
@@ -120,7 +121,6 @@ refresh_dataset(
   },
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "consumption.csv"))
 )
-
 
 # OKANAGAN LAKE DAILY MEAN LEVEL (weather.gc.ca API, paginated) -------------
 refresh_dataset(
@@ -145,7 +145,7 @@ refresh_dataset(
       if (nrow(df_d) < limit) break
       offset <- offset + limit
     }
-    bind_rows(all_data) |>
+    bind_rows(all_data) %>%
       mutate(
         Year = year(DATE),
         Month = month(DATE),
@@ -194,7 +194,7 @@ refresh_dataset(
     read_csv(
       Sys.getenv("GOOGLE_SHEET_DROUGHT_URL"),
       show_col_types = FALSE
-    ) |>
+    ) %>%
       mutate(
         Start_Date = as.Date(
           substr(Start_Date, 1, 10),
@@ -204,14 +204,14 @@ refresh_dataset(
           DroughtLevel == "Not updated outside of core drought season" ~ 6,
           TRUE ~ as.numeric(DroughtLevel)
         )
-      ) |>
-      select(BasinName, Start_Date, DroughtLevel) |>
+      ) %>%
+      select(BasinName, Start_Date, DroughtLevel) %>%
       arrange(BasinName, Start_Date)
   },
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "drought_hist.csv"))
 )
 
-# STREAM THERMAL STATE (daily zip download) ---------------------------------
+# STREAM THERMAL STATE (daily zip download) -----------------------------------------
 refresh_dataset(
   "stream_temp",
   function() {
@@ -230,6 +230,69 @@ refresh_dataset(
     read.csv(file.path(tmp_dir, "stream_temperature_daily.csv"))
   },
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "stream_temp.csv"))
+)
+
+# STREAM STATION METADATA (zip download) --------------------------------------------
+refresh_dataset(
+  "station_metadata",
+  function() {
+    tmp_zip <- tempfile(fileext = ".zip")
+    tmp_dir <- tempfile()
+    dir.create(tmp_dir)
+    on.exit(unlink(c(tmp_zip, tmp_dir), recursive = TRUE), add = TRUE)
+    
+    download.file(
+      "https://storage.googleapis.com/obwb-okanagan-streamtemp/oktemp_streamtemp_latest.zip",
+      destfile = tmp_zip,
+      quiet = TRUE,
+      mode = "wb"
+    )
+    unzip(zipfile = tmp_zip, exdir = tmp_dir)
+    read.csv(file.path(tmp_dir, "station_metadata.csv"))
+  },
+  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "station_metadata.csv"))
+)
+
+# STREAM TEMP MASTER 2002 - PRESENT ----------------------------------------------------------------------------------
+refresh_dataset(
+  "stream_temp_master",
+  function() {
+    tmp_file <- tempfile(fileext = ".xlsx")
+    
+    download.file(
+      "https://storage.googleapis.com/obwb-okanagan-streamtemp/datasets/master/oktemp_master_temperature_latest.xlsx",
+      destfile = tmp_file,
+      mode = "wb",
+      quiet = TRUE
+    )
+    
+    df <- read_excel(tmp_file, sheet = "Daily")
+    
+    df <- df%>%
+      filter(basin == "Okanagan")
+  },
+  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "stream_temp_master.csv"))
+)
+
+# STREAM TEMP MASTER 2002 - PRESENT ----------------------------------------------------------------------------------
+refresh_dataset(
+  "stream_summer",
+  function() {
+    tmp_file <- tempfile(fileext = ".xlsx")
+    
+    download.file(
+      "https://storage.googleapis.com/obwb-okanagan-streamtemp/datasets/master/oktemp_master_temperature_latest.xlsx",
+      destfile = tmp_file,
+      mode = "wb",
+      quiet = TRUE
+    )
+    
+    df <- read_excel(tmp_file, sheet = "Annual_Summer")
+    
+    df <- df%>%
+      filter(basin == "Okanagan")
+  },
+  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "stream_summer.csv"))
 )
 
 message("Data refresh complete. See ", file.path(CACHE_DIR, "refresh_log.csv"), " for a run history.")
