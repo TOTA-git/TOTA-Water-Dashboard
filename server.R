@@ -148,7 +148,6 @@ server <- function(input, output, session) {
           align = "left"
         ))%>%
        plotly::config(displayModeBar = FALSE)
-    
   })
   
   #HISTORICAL RANGE FOR DAILY MEAN LAKE LEVEL LINE CHART -------------------------------------------------------------
@@ -263,9 +262,7 @@ server <- function(input, output, session) {
        }
      }
    }
-
-    p %>%
-    plotly::config(displayModeBar = FALSE)
+    p %>% plotly::config(displayModeBar = FALSE)
   })
   
 #WATER CONSUMPTION TAB ===============================================================================================
@@ -278,7 +275,6 @@ server <- function(input, output, session) {
       ) %>%
       pull(total_consumption)
 
-    
     valueBox(
       value = paste0(scales::comma(total_consumption), " m³"),
       subtitle = paste0("Total consumption for ", input$year_consumption),
@@ -292,7 +288,6 @@ server <- function(input, output, session) {
     df_max_consumption<- df_consumption_long %>%
       filter(Year == input$year_consumption) %>%
       filter(Consumption == max(Consumption, na.rm = TRUE))
-      
     
     valueBox(
       value = paste0(scales::comma(df_max_consumption$Consumption), " m³"),
@@ -506,15 +501,12 @@ server <- function(input, output, session) {
         title = "Well Type",
         opacity = 1
       )
-
     setView(m_markers, lng = -119.496, lat = 49.880, zoom = 6)
   })
 
   #OBSERVE CLICKED MARKER --------------------------------------------------------------------------------------------
   observeEvent(input$WellPlot_marker_click, {
-
     selectedWell$Well <- input$WellPlot_marker_click$id
-
   })
 
   #REACTIVE EVENT ----------------------------------------------------------------------------------------------------
@@ -769,8 +761,7 @@ server <- function(input, output, session) {
         
         axis.text.x.bottom = element_blank(),
         axis.ticks.x.bottom = element_blank(),
-        
-        
+
         axis.text.y = element_text(
           size = if (is_narrow) 8 else 12,
           hjust = 1
@@ -796,10 +787,8 @@ server <- function(input, output, session) {
   }, res = 96)
 
 #FISH TAB ============================================================================================================
-  
   #VALUE BOX FOR TOTAL STREAM STATION --------------------------------------------------------------------------------
   output$numStations <- renderValueBox({
-    
     valueBox(
       value = length(unique(df_stream_master$station_id)),
       subtitle = "Stream observation stations.",
@@ -830,8 +819,6 @@ server <- function(input, output, session) {
     df_stream_filtered <- df_stream_master %>%
       filter(year == input$year_stream) %>%
       filter(tw_mean_c >= 19)
-    
-    
     
     valueBox(
       value = paste0(length(unique(df_stream_filtered$station_id)), "/", length(unique(df_stream_master$station_id))),
@@ -913,7 +900,6 @@ server <- function(input, output, session) {
       hoverinfo = "text",
       traces = 2
     )
-    
     p <- plotly::config(p, displayModeBar = FALSE)
   })
   

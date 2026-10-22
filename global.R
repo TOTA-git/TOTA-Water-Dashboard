@@ -26,7 +26,7 @@ source("R/data_helpers.R")
 # app keeps running on the last successful pull (see
 # data/cache/refresh_log.csv for a history of refresh attempts).
 
-#OBWB INFLOWS DATA FRAME ----------------------------------------------
+#OBWB INFLOWS ----------------------------------------------------------------------------------
 df_inflow <- read_cache_csv("inflow")
 df_inflow$`Week ending` <- as.Date(df_inflow$`Week ending`)
 
@@ -39,7 +39,7 @@ average <- latest$`1944-2025 avg (ac-ft)`
 diff <- current - average
 status <- if (diff >= 0) "higher" else "lower"
 
-#WATER CONSUMPTION DATA FRAME ------------------------------------------------------------------
+#WATER CONSUMPTION -----------------------------------------------------------------------------
 df_consumption <- read_cache_csv("consumption")
 #Converting multiple year columns to one single column
 df_consumption_long <- df_consumption %>%
@@ -50,11 +50,11 @@ df_consumption_long <- df_consumption %>%
   )
 df_consumption_long$Year <- gsub("_VOL_m³", "", df_consumption_long$Year)
 
-#DAILY MEAN OF OKANAGAN LAKE LEVEL DATA FRAME 1990-current--------------------------------------
+#DAILY MEAN OF OKANAGAN LAKE LEVEL 1990-current------------------------------------------------
 df_daily_mean <- read_cache_csv("daily_mean")
 df_daily_mean$DATE <- as.Date(df_daily_mean$DATE)
 
-#GROUND WATER MAP DATA FRAME ------------------------------------------------------------------
+#GROUND WATER MAP -----------------------------------------------------------------------------
 df_groundwater <- read_cache_csv("groundwater")
 
 #Read in well locations.csv (static reference data, not part of the daily refresh)
@@ -86,30 +86,29 @@ df_map_sf <- st_as_sf(
   remove = FALSE
 )
 
-#DROUGHT MAP -------------------------------------------------------------------------------
+#DROUGHT MAP ----------------------------------------------------------------------------------
 df_drought <- read_cache_rds("drought")
 
-#HISTORICAL DROUGHT  -------------------------------------------------------------------------
+#HISTORICAL DROUGHT  --------------------------------------------------------------------------
 df_drought_hist <- read_cache_csv("drought_hist")
 
-#STREAM THERMAL STATE 577 DAY ROLLING WINDOW ----------------------------------------------------------
+#STREAM THERMAL STATE 577 DAY ROLLING WINDOW --------------------------------------------------
 df_stream_temp <- read_cache_csv("stream_temp")
 
 df_stream_temp$year <- format(as.Date(df_stream_temp$date, format="%-/%m-%d"),"%Y")
 
-#STREAM STATION META DATA ------------------------------------------------------------------------------
+#STREAM STATION META DATA ---------------------------------------------------------------------
 df_station_meta <- read_cache_csv("station_metadata")
 
-#STREAM TEMP MASTER 2002 - PRESENT -----------------------------------------------------------
+#STREAM TEMP MASTER 2002 - PRESENT ------------------------------------------------------------
 df_stream_master <- read_cache_csv("stream_temp_master")
 df_stream_master$year <- format(as.Date(df_stream_master$date, format="%-/%m-%d"),"%Y")
 
-#STREAM TEMP MEAN FROM JUL & AUG -------------------------------------------------------------
+#STREAM TEMP MEAN FROM JUL & AUG --------------------------------------------------------------
 df_stream_summer <- read_cache_csv("stream_summer")
 
-#FRASER AND COLUMBIA RIVER BASIN MAP -------------------------------------------------------------------
-# Static local shapefile - not part of the scheduled refresh.
+#FRASER AND COLUMBIA RIVER BASIN MAP ----------------------------------------------------------
 df_river <- st_read("data/rivers.shp")
 
-#BC BOUNDARY -------------------------------------------------------------------------------------------
+#BC BOUNDARY ----------------------------------------------------------------------------------
 df_bc <- st_read("data/bc_boundary.geojson", quiet = TRUE)
