@@ -30,7 +30,7 @@ jobs:
       # Installs all R packages needed
       - name: Install R Package Dependencies
         run: |
-          Rscript -e 'install.packages(c("httr", "jsonlite", "readr", "dplyr", "tidyr", "lubridate", "sf", "geojsonsf", "rvest", "chromote"))'
+          Rscript -e 'install.packages(c("httr", "jsonlite", "readr", "dplyr", "tidyr", "lubridate", "sf", "geojsonsf", "rvest", "chromote", "readxl"))'
 
       # Executes the data collection script which calls data_helpers.R functions
       # - name: Run data refresh script
