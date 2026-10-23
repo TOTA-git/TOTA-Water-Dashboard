@@ -166,51 +166,6 @@ refresh_dataset(
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "groundwater.csv"))
 )
 
-# DROUGHT LEVELS (ArcGIS FeatureServer, current snapshot) -------------------
-refresh_dataset(
-  "drought",
-  function() {
-    drought_url <- "https://services1.arcgis.com/xeMpV7tU1t4KD3Ei/arcgis/rest/services/British_Columbia_Drought_Levels_(Edit)_view/FeatureServer/27/query?f=geojson&where=(BasinName%20IN%20('Okanagan'%2C%20'South%20Thompson'%2C%20'North%20Thompson'%2C%20'Lower%20Thompson'%2C%20'Kettle%20River'%2C%20'Nicola'%2C%20'Similkameen'))&outFields=*"
-    resp <- GET(drought_url)
-    if (httr::http_error(resp)) {
-      stop("Drought FeatureServer returned HTTP ", status_code(resp))
-    }
-    geojson <- content(resp, "text", encoding = "UTF-8")
-    df <- geojson_sf(geojson)
-    df$Date_Modified <- as.POSIXct(
-      df$Date_Modified / 1000,
-      origin = "1970-01-01",
-      tz = "America/Vancouver"
-    )
-    df
-  },
-  function(df) atomic_write_rds(df, file.path(CACHE_DIR, "drought.rds"))
-)
-
-# HISTORICAL DROUGHT LEVELS (Google Sheet is manually updated but automatically refreshed) ----------------------------------
-refresh_dataset(
-  "drought_hist",
-  function() {
-    read_csv(
-      Sys.getenv("GOOGLE_SHEET_DROUGHT_URL"),
-      show_col_types = FALSE
-    ) %>%
-      mutate(
-        Start_Date = as.Date(
-          substr(Start_Date, 1, 10),
-          format = "%Y/%m/%d"
-        ),
-        DroughtLevel = case_when(
-          DroughtLevel == "Not updated outside of core drought season" ~ 6,
-          TRUE ~ as.numeric(DroughtLevel)
-        )
-      ) %>%
-      select(BasinName, Start_Date, DroughtLevel) %>%
-      arrange(BasinName, Start_Date)
-  },
-  function(df) atomic_write_csv(df, file.path(CACHE_DIR, "drought_hist.csv"))
-)
-
 # STREAM THERMAL STATE (daily zip download) -----------------------------------------
 refresh_dataset(
   "stream_temp",
@@ -274,7 +229,7 @@ refresh_dataset(
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "stream_temp_master.csv"))
 )
 
-# STREAM TEMP MASTER 2002 - PRESENT ----------------------------------------------------------------------------------
+# STREAM TEMP ANNUAL SUMMER ----------------------------------------------------------------------------------
 refresh_dataset(
   "stream_summer",
   function() {

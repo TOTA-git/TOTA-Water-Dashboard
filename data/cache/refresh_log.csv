@@ -1,19 +1,9 @@
 dataset,timestamp,status,n_rows,message
-inflow,2026-10-22 16:21:02,success,52,NA
-consumption,2026-10-22 16:21:04,success,21,NA
-daily_mean,2026-10-22 16:21:07,success,13149,NA
-groundwater,2026-10-22 16:21:37,success,472,NA
-drought,2026-10-22 16:21:39,success,7,NA
-drought_hist,2026-10-22 16:21:40,success,175,NA
-stream_temp,2026-10-22 16:21:41,success,19076,NA
-station_metadata,2026-10-22 16:21:41,success,26,NA
-stream_temp_master,2026-10-22 16:21:43,success,95796,NA
-stream_temp_master,2026-10-22 16:25:59,success,74835,NA
-stream_temp_master,2026-10-22 16:28:11,failure,NA,is.data.frame(x) is not TRUE
-stream_temp_master,2026-10-22 16:29:08,failure,NA,is.data.frame(x) is not TRUE
-stream_temp_master,2026-10-22 16:29:27,failure,NA,is.data.frame(x) is not TRUE
-stream_temp_master,2026-10-22 17:04:02,failure,NA,"could not find function ""read_excel"""
-stream_temp_master,2026-10-22 17:04:38,failure,NA,"could not find function ""read_excel"""
-stream_temp_master,2026-10-22 17:06:55,failure,NA,`path` does not exist: ‘https://storage.googleapis.com/obwb-okanagan-streamtemp/datasets/master/oktemp_master_temperature_latest.xlsx’
-stream_temp_master,2026-10-22 17:09:02,success,74835,NA
-stream_summer,2026-10-22 17:11:20,success,220,NA
+inflow,2026-10-23 20:56:57,success,52,NA
+consumption,2026-10-23 20:56:58,success,21,NA
+daily_mean,2026-10-23 20:57:00,success,13149,NA
+groundwater,2026-10-23 20:57:26,success,472,NA
+stream_temp,2026-10-23 20:57:27,success,19102,NA
+station_metadata,2026-10-23 20:57:27,success,26,NA
+stream_temp_master,2026-10-23 20:57:30,success,74859,NA
+stream_summer,2026-10-23 20:57:31,success,220,NA

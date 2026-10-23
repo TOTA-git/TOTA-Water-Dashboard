@@ -383,7 +383,7 @@ server <- function(input, output, session) {
         
          geom_text(
            aes(label = paste0(round(Consumption / 1e6, 1), "M")),
-           nudge_x = if (is_narrow) 30000000 else 7000000,
+           nudge_x = if (is_narrow) 50000000 else 10000000,
            nudge_y = 0.15,
            hjust = 0,
            size = if (is_narrow) 3.5 else 5
@@ -392,7 +392,7 @@ server <- function(input, output, session) {
          # Reporting count
          geom_text(
            aes(label = paste0(n_reported, "/", n_total, " reporting")),
-           nudge_x = if (is_narrow) 30000000 else 7000000,
+           nudge_x = if (is_narrow) 50000000 else 10000000,
            nudge_y = -0.15,
            hjust = 0,
            size = if (is_narrow) 2 else 4,
@@ -592,199 +592,6 @@ server <- function(input, output, session) {
       theme(plot.title = element_text(face = 'bold'), legend.title = element_blank(), 
             legend.text =  element_text(size = 18))
   })
-
-#DROUGHT TAB ========================================================================================================= 
-  #DROUGHT MAP OF THOMPSON OKANAGAN REGION ---------------------------------------------------------------------------
-  output$DroughtPlot <- renderLeaflet({
-
-    pal <- colorFactor(
-      palette = c(
-        "#E5EFBD",  # 0
-        "#F0E918",  # 1
-        "#F5C361",  # 2
-        "#E38A2A",  # 3
-        "#D71B22",  # 4
-        "#800A0C"   # 5
-      ),
-      domain = c(0, 1, 2, 3, 4, 5),
-    )
-
-    m_base <- leaflet(data = df_drought)
-
-    m_tiles <- addTiles(m_base)
-
-    m_ploy <-  addPolygons(
-      m_tiles,
-      fillColor = ~pal(DroughtLevel),
-      fillOpacity = 0.75,
-      weight = 1.5,
-      color = "black",
-      popup = ~paste0(
-        "<b>", BasinName, "</b><br>",
-        "Current Drought Level: ", DroughtLevel
-      )
-    )
-
-     m_legend <- addLegend(
-        m_ploy,
-        "bottomright",
-        pal = pal,
-        values = c(0, 1, 2, 3, 4, 5),
-        title = "Drought Level",
-        opacity = 1
-      )
-    setView(m_legend, lng = -120.34, lat = 50.98, zoom = 6)
-  })
-  
-  #DROUGHT TABLE -----------------------------------------------------------------------------------------------------
-  output$DroughtTable <- renderUI({
-    
-    tags$table(
-      class = "table table-striped table-sm",
-      tags$thead(
-        tags$tr(
-          tags$th("Basin"),
-          tags$th("Drought Level"),
-          tags$th("Latest Update")
-        )
-      ),
-      
-      tags$tbody(
-        lapply(seq_len(nrow(df_drought)), function(i) {
-          
-          tags$tr(
-            tags$td(df_drought$BasinName[i]),
-            tags$td(df_drought$DroughtLevel[i]),
-            tags$td(format(df_drought$Date_Modified[i], "%Y-%m-%d %H:%M %p"))
-          )
-        })
-      )
-    )
-  })
-  
-  #DROUGHT HISTORY HEATMAP TABLE -- Data needs to be manually updated in the google sheet ----------------------------
-  output$DroughtHistPlot <- renderPlot({
-    
-    plot_width <- session$clientData$output_DroughtHistPlot_width
-    is_narrow <- !is.null(plot_width) && plot_width < 600
-    
-    df <- df_drought_hist %>%
-      mutate(
-        Date_Label = format(Start_Date, "%d-%b")
-      )
-    
-    df$BasinName <- factor(
-      df$BasinName,
-      levels = rev(unique(df$BasinName))
-    )
-    
-    # Keep dates in chronological order
-    df$Date_Label <- factor(
-      df$Date_Label,
-      levels = unique(df$Date_Label)
-    )
-    
-    ggplot(
-      df,
-      aes(
-        x = Date_Label,
-        y = BasinName,
-        fill = factor(DroughtLevel)
-      ),
-    ) +
-      
-      # Heatmap cells
-      geom_tile(
-        color = "black",
-        linewidth = 0.25
-      ) +
-      
-      # Numbers inside cells
-      geom_text(
-        aes(
-          label = ifelse(
-            DroughtLevel == 6,
-            "*",
-            DroughtLevel
-          )
-        ),
-        size = 3
-      ) +
-      
-      # Drought colours
-      scale_fill_manual(
-        values = c(
-          "0" = "#E5EFBD",
-          "1" = "#F0E918",
-          "2" = "#F5C361",
-          "3" = "#E38A2A",
-          "4" = "#D71B22",
-          "5" = "#800A0C",
-          "6" = "#BDBDBD" #NA
-        ),
-        
-        labels = c(
-          "0" = "0",
-          "1" = "1",
-          "2" = "2",
-          "3" = "3",
-          "4" = "4",
-          "5" = "5",
-          "6" = "Not updated"
-        ),
-        name = "Drought Levels",
-      ) +
-      
-      labs(
-        x = "",
-        y = ""
-      )+
-      
-      theme_minimal() +
-      
-      scale_x_discrete(
-        position = "top",
-        expand = c(0, 0),
-        guide = guide_axis(
-          angle = if (is_narrow) 90 else 30,
-          check.overlap = TRUE
-        )
-      ) +
-      
-      scale_y_discrete(expand = c(0, 0)) +
-      
-      theme(
-        axis.text.x = element_text(
-          hjust = 0.5,
-          size = if (is_narrow) 9 else 12,
-        ),
-        
-        axis.text.x.bottom = element_blank(),
-        axis.ticks.x.bottom = element_blank(),
-
-        axis.text.y = element_text(
-          size = if (is_narrow) 8 else 12,
-          hjust = 1
-        ),
-        
-        panel.grid = element_blank(),
-        
-        legend.position = if (is_narrow) "bottom" else "top",
-        legend.direction = "horizontal",
-        legend.location = "plot",
-        legend.justification = "left",
-        plot.margin = margin(t = 5, r = 5, b = 5, l = 0),
-        
-        
-        legend.title = element_text(
-          size = if (is_narrow) 8 else 11
-        ),
-        
-        legend.text = element_text(
-          size = if (is_narrow) 8 else 10
-        ),
-      ) 
-  }, res = 96)
 
 #FISH TAB ============================================================================================================
   #VALUE BOX FOR TOTAL STREAM STATION --------------------------------------------------------------------------------

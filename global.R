@@ -86,12 +86,6 @@ df_map_sf <- st_as_sf(
   remove = FALSE
 )
 
-#DROUGHT MAP ----------------------------------------------------------------------------------
-df_drought <- read_cache_rds("drought")
-
-#HISTORICAL DROUGHT  --------------------------------------------------------------------------
-df_drought_hist <- read_cache_csv("drought_hist")
-
 #STREAM THERMAL STATE 577 DAY ROLLING WINDOW --------------------------------------------------
 df_stream_temp <- read_cache_csv("stream_temp")
 

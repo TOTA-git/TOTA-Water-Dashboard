@@ -101,7 +101,6 @@ ui <- dashboardPage(
       menuItem("Water Supply", tabName = "net_inflow", icon = icon("square-poll-vertical")),
       menuItem("Water Consumption", tabName = "water_consumption", icon = icon("droplet")),
       menuItem("Groundwater Wells", tabName = "groundwater_wells", icon = icon("map-location")),
-      menuItem("Drought Conditions", tabName = "drought_level", icon = icon("hand-holding-droplet")),
       menuItem("Fish", tabName = "stream", icon = icon("fish")),
       menuItem("Back to Hub", tabName = NULL, icon = icon("globe"), href = "https://tota-insto-hub.share.connect.posit.cloud/", newtab = FALSE)
     ),
@@ -212,13 +211,6 @@ ui <- dashboardPage(
               p("Explore annual water consumption by provider and year. Compare providers and examine changes in regional water use."),
               
               actionLink(
-                "groundwater_link",
-                strong("Groundwater Wells - What is happening to water below ground?"),
-                class = "explore-link"
-              ),
-              p("Explore groundwater monitoring locations across the region, view available well-level information, and compare change over time."),
-              
-              actionLink(
                 "drought_link",
                 strong("Drought Conditions - How dry is the region?"),
                 class = "explore-link"
@@ -288,14 +280,11 @@ ui <- dashboardPage(
             title = "Water Supply - Is the lake receiving enough water?",
             solidHeader = TRUE,
             width = 12,
-            p(paste0("Net inflow measures how much water is added to Okanagan Lake each week after accounting for water released 
-                     downstream through the Okanagan River at Penticton (station 08NM050). Comparing current inflows with the historical
-                     average helps show whether the lake is receiving more or less water than usual. Okanagan Lake levels naturally 
-                     fluctuate throughout the year in response to snowmelt, precipitation, inflows, outflows, and evaporation. Comparing
-                     daily mean lake levels from the most recent available year, with historical years provides context for current water
-                     conditions. Station 08NM083 (Okanagan Lake) uses an assumed datum, meaning its zero point is an arbitrary reference established
-                     for the gauge rather than a fixed elevation above sea level. For example, a recorded level of 1.4 m indicates that the water
-                     surface is 1.4 metres above the station's reference point.")),
+            p("Okanagan Lake is an important water source for communities, ecosystems, and tourism activities within the Thompson-Okanagan region. 
+              Although these indicators focus specifically on Okanagan Lake rather than the entire tourism region, they provide insight into water 
+              availability in the Okanagan Valley, where water conditions can influence recreational activities, destination appeal, and the sustainability 
+              of tourism-dependent communities. Monitoring lake inflows and water levels helps provide context for understanding regional water supply conditions
+              and their potential implications for tourism."),
             style = "font-size: 18px;"
           ),
           
@@ -316,6 +305,19 @@ ui <- dashboardPage(
             style = "font-size: 16px;"
           ),
           
+          infoBox(
+            title = "Net Inflow",
+            width = 12,
+            color = "light-blue",
+            icon = icon("circle-info"),
+            subtitle = "Net inflow measures how much water is added to Okanagan Lake each week after accounting for water released downstream through the Okanagan River at
+              Penticton (station 08NM050). Comparing current inflows with the historical average helps identify whether the lake is receiving more or less water than usual. 
+              Okanagan Lake levels naturally fluctuate throughout the year in response to snowmelt, precipitation, inflows, outflows, and evaporation. 
+              Periods of below-average inflow may signal increased pressure on water resources, particularly during the summer tourism season when demand for water and 
+              recreational access to lakes are important.",
+            
+          ),
+          
           box(
             title = "Daily Mean Water Level of Okanagan Lake",
             solidHeader = TRUE,
@@ -323,6 +325,18 @@ ui <- dashboardPage(
             plotlyOutput("HistoricalDailyPlot" , height = 600),
             style = "font-size: 16px;"
            ),
+          
+          infoBox(
+            title = "Daily Mean Levels",
+            width = 12,
+            color = "light-blue",
+            icon = icon("circle-info"),
+            subtitle = "Daily mean lake levels show how Okanagan Lake's water levels change over time, providing context for current conditions relative to historical years. 
+              Low levels can highlight water-supply concerns during periods of high demand. These conditions can have implications for drinking water supplies, ecosystems, 
+              agriculture, and tourism activities. Station 08NM083 (Okanagan Lake) uses an assumed datum, meaning its zero point is an arbitrary reference established 
+              for the gauge rather than a fixed elevation above sea level. For example, a recorded level of 1.4 m indicates that the water surface is 1.4 metres 
+              above the station's reference point."
+          ),
           
           box(
             title = "References & Data",
@@ -540,71 +554,6 @@ ui <- dashboardPage(
       ),
       
       tabItem(
-        tabName = "drought_level",
-        
-        tags$style(HTML("
-          @media (max-width: 600px) {
-            #DroughtPlot { height: 350px !important; }
-            #DroughtHistPlot { height: 350px !important; }
-          }
-        ")),
-        
-        fluidRow(
-          box(
-            title = "Drought - How dry is the region?",
-            solidHeader = TRUE,
-            width = 12,
-            p("Drought conditions provide important context for understanding water availability across the region. The drought scale combines 
-              information about water supply and environmental conditions to indicate the severity of drought."),
-            style = "font-size: 18px;"
-          ),
-          
-          box(
-            title = "Current Drought Levels of Basins within the Thompson Okanagan Region",
-            solidHeader = TRUE,
-            width = 6,
-            leafletOutput("DroughtPlot", height = 640)
-          ),
-          
-          box(
-            title = "Drought Scale",
-            solidHeader = TRUE,
-            tags$img(
-              src = "drought_scale.png",
-              width = "100%"
-            ),
-            footer = ("Government of British Columbia. B.C. Drought Information Portal. Available at: https://droughtportal.gov.bc.ca/")
-          ),
-          
-          box(
-            title = "Data",
-            solidHeader = TRUE,
-            width = 6,
-            htmlOutput("DroughtTable")
-          ),
-          
-          box(
-              title = paste0(
-                      max(format(df_drought_hist$Start_Date, "%Y"), na.rm = TRUE),
-                      " Drought Levels at a Glance"
-                      ),
-            solidHeader = TRUE,
-            width = 12,
-            plotOutput("DroughtHistPlot", height = 500)
-          ),
-          
-          box(
-            title = "References & Data",
-            solidHeader = TRUE,
-            width = 12,
-            p("Data source: Province of British Columbia. B.C. Drought Information Portal (British Columbia Drought Levels).
-              Retrieved from https://droughtportal.gov.bc.ca/datasets/f1842161d9c2454a98f9fc3b45d5d92e_27/explore?location=54.149730%2C-126.557374%2C5"),
-            p("Data source: Government of British Columbia. BC Drought Levels Time Lapse 2025. Drought Information Portal. Retrieved from https://drought-information-portal-bcgov03.hub.arcgis.com/pages/historical-drought-levels")
-          )
-        ),
-      ),
-      
-      tabItem(
         tabName = "stream",
         
         tags$style(HTML("
@@ -699,7 +648,7 @@ ui <- dashboardPage(
           uiOutput("StreamLinePlotBox", height = 500),
           
           box(
-            title = "July–August Mean Temperatures",
+            title = "July–August Mean Stream Temperatures",
             width = 12,
             solidHeader = TRUE,
             plotOutput("SummerTempHeatmap", height = 600)

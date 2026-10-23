@@ -16,13 +16,6 @@ atomic_write_csv <- function(df, path) {
   file.rename(tmp, path)
 }
 
-atomic_write_rds <- function(obj, path) {
-  dir.create(dirname(path), recursive = TRUE, showWarnings = FALSE)
-  tmp <- paste0(path, ".tmp")
-  saveRDS(obj, tmp)
-  file.rename(tmp, path)
-}
-
 # --- Cache reads (used by global.R) -------------------------------------
 # Error clearly instead of silently starting the app with no data, so a
 # missing/empty cache is obvious rather than surfacing as a confusing
@@ -36,17 +29,6 @@ read_cache_csv <- function(name, ...) {
     )
   }
   readr::read_csv(path, show_col_types = FALSE, ...)
-}
-
-read_cache_rds <- function(name) {
-  path <- file.path(CACHE_DIR, paste0(name, ".rds"))
-  if (!file.exists(path)) {
-    stop(
-      "Cache file '", path, "' not found. Run data_refresh.R at least ",
-      "once before starting the app."
-    )
-  }
-  readRDS(path)
 }
 
 # --- Refresh logging ------------------------------------------------------
