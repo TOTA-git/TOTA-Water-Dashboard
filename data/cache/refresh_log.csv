@@ -1,9 +1,9 @@
 dataset,timestamp,status,n_rows,message
-inflow,2026-10-30 21:44:26,success,52,NA
-consumption,2026-10-30 21:44:27,success,21,NA
-daily_mean,2026-10-30 21:44:29,success,13149,NA
-groundwater,2026-10-30 21:44:57,success,472,NA
-stream_temp,2026-10-30 21:44:58,success,19293,NA
-station_metadata,2026-10-30 21:44:58,success,28,NA
-stream_temp_master,2026-10-30 21:45:00,success,74979,NA
-stream_summer,2026-10-30 21:45:01,success,220,NA
+inflow,2026-10-31 20:50:16,failure,NA,Data table tab was activated but no <table> was found inside it.
+consumption,2026-10-31 20:50:17,success,21,NA
+daily_mean,2026-10-31 20:50:18,success,13149,NA
+groundwater,2026-10-31 20:50:50,success,472,NA
+stream_temp,2026-10-31 20:50:50,success,19321,NA
+station_metadata,2026-10-31 20:50:51,success,28,NA
+stream_temp_master,2026-10-31 20:50:53,success,74979,NA
+stream_summer,2026-10-31 20:50:54,success,220,NA
