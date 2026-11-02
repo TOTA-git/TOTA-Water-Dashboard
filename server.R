@@ -544,17 +544,13 @@ server <- function(input, output, session) {
       ) + 
       
       labs(
-        title = paste0("Change in Groundwater Level - ",
-                            selectedWell$Well),
         x = NULL, 
         y = "Average Water Level Below Ground Surface (m)"
       )+ 
       
       theme(
-        plot.title = ggtext::element_markdown(hjust = 0.5, face = "bold", size = if (is_narrow) 10 else 16), 
-        plot.subtitle = ggtext::element_markdown(hjust = 0.5, size = if (is_narrow) 10 else 12),
-        axis.title = element_text(size = if (is_narrow) 10 else 15),
-        axis.text = element_text(size = if (is_narrow) 10 else 16)
+        axis.title = element_text(size = if (is_narrow) 10 else 18),
+        axis.text = element_text(size = if (is_narrow) 10 else 18)
       )+
       
       scale_x_date(
@@ -563,7 +559,19 @@ server <- function(input, output, session) {
         expand = c(0,0)) +
     
       scale_y_reverse()
-  }, res = 96)
+    
+
+  })
+  
+  #DYNAMIC UI STREAM LINE PLOT ---------------------------------------------------------------------------------------
+  output$ChangeOverTimePlotBox <- renderUI({
+    box(
+      title = if (is.null(selectedWell$Well)) "Select a well on the map" else paste0("Change in Groundwater Level - ", selectedWell$Well),
+      solidHeader = TRUE,
+      width = 6,
+      plotOutput("ChangeOverTimePlot", height = 600)
+    )
+  })
   
   #COMPARE WELL TYPES DOUGGHNUT CHART --------------------------------------------------------------------------------
   output$WellTypePlot <- renderPlot({
@@ -665,7 +673,21 @@ server <- function(input, output, session) {
           color = "#004B55",
           linewidth = 1
         ) +
-        
+      
+        geom_hline(
+          yintercept = 19,
+          colour = "black",
+          linewidth = 0.5,
+          linetype = "dashed"
+        ) +
+      
+        geom_hline(
+          yintercept = 21,
+          colour = "black",
+          linewidth = 0.5,
+          linetype = "dashed"
+        ) +
+          
         scale_x_date(
           date_labels = "%b",
           date_breaks = "1 month",
@@ -717,7 +739,8 @@ server <- function(input, output, session) {
       width = 12,
       solidHeader = TRUE,
       plotlyOutput("StreamLinePlot", height = 500),
-      p("Line shows average daily mean water temperature across monitoring stations; shaded ribbon shows the minimum–maximum range of daily mean temperatures."),
+      p("Line shows average daily mean water temperature across monitoring stations; shaded ribbon shows the minimum–maximum range of daily mean temperatures;
+        dashed lines show threshhold between 19-21 °C causing thermal-stress and migration barriers for salmonids."),
     )
   })
   
@@ -746,8 +769,15 @@ server <- function(input, output, session) {
             ) +
             
             geom_tile(color = "white", linewidth = 0.2) +
-            scale_fill_viridis_c(
-              option = "plasma",
+      
+            scale_fill_gradientn(
+              colours = c("#004B55", "#76ACA9", "red3", "darkred"),
+              values = scales::rescale(c(
+                min(df_summer$julaug_mean_c, na.rm = TRUE),
+                18.99,
+                19,
+                max(df_summer$julaug_mean_c, na.rm = TRUE)
+              )),
               name = "Mean temp (°C)",
               na.value = "grey90"
             ) +
@@ -922,14 +952,14 @@ server <- function(input, output, session) {
       geom_vline(
         aes(xintercept = 21,
         colour = "19-21°C threshold"),
-        linewidth = 1,
+        linewidth = 0.5,
         linetype = "dashed"
       ) +
       
       geom_vline(
         xintercept = 19,
         colour = "black",
-        linewidth = 1,
+        linewidth = 0.5,
         linetype = "dashed"
       ) +
       
@@ -1018,10 +1048,6 @@ server <- function(input, output, session) {
   
   observeEvent(input$groundwater_link, {
     updateTabItems(session, "tabs", "groundwater_wells")
-  })
-  
-  observeEvent(input$drought_link, {
-    updateTabItems(session, "tabs", "drought_level")
   })
   
   observeEvent(input$stream_state_link, {

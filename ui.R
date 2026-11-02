@@ -139,19 +139,6 @@ ui <- dashboardPage(
             column(
               width = 12,
               h2("About this Dashboard"),
-                
-              p("The Okanagan watershed supports communities, agriculture, ecosystems, and the tourism experiences that attract visitors 
-                to the Thompson-Okanagan region. As water resources face increasing pressures from drought, population growth, competing demands, 
-                and changing environmental conditions, understanding how water is used and how conditions are changing is essential."),
-              
-              p("This dashboard brings together publicly available data on the Okanagan watershed's water supply, consumption, groundwater, 
-                drought levels, and fish habitat conditions to support a more integrated understanding of water across the region."),
-              
-              p("The Okanagan watershed is being used as a pilot region for the Thompson Okanagan. Water management data can be difficult to collect 
-                and standardize across the entire Thompson-Okanagan due to the region's large geographic area, multiple watersheds, and 
-                numerous water providers. By focusing initially on the Okanagan watershed, this dashboard can test methods 
-                for collecting, organizing, and monitoring water data within a clearly defined watershed."),
-              
               p("The purpose of this dashboard is to support TOTA's water management reporting for the ", 
                 tags$a(
                   href = "https://www.untourism.int/observatories/thompson-okanagan",
@@ -159,15 +146,14 @@ ui <- dashboardPage(
                   target = "_blank",
                   style ="color: #76ACA9; text-decoration: underline;"
                 ), " and contribute to ongoing efforts to better understand the relationship between 
-                water and tourism in the Thompson-Okanagan. The pilot approach will also help identify opportunities to expand water monitoring 
-                and data collection to other areas of the region in the future."),
-              
-              p("Understanding how much water is available, how much is being used, and how conditions are changing helps build a clearer 
-                picture of the region's water resources and tourism's relationship with them. Tourism depends on reliable water supplies 
-                for accommodations, restaurants, wineries, and the lakes,
-                streams, and landscapes that are central to the visitor experience."),
-            
-
+                water management and tourism in the Thompson-Okanagan."),
+              p("The Okanagan watershed is being used as a pilot region for the Thompson Okanagan. Water management data can be difficult to collect 
+                and standardize across the entire Thompson-Okanagan due to the region's large geographic area, multiple watersheds, and 
+                numerous water providers. By focusing initially on the Okanagan watershed, this dashboard can test methods 
+                for collecting, organizing, and monitoring water data within a clearly defined watershed."),
+              p("The Okanagan watershed supports communities, agriculture, ecosystems, and the tourism experiences that attract visitors 
+                to the Thompson-Okanagan region. As water resources face increasing pressures from drought, population growth, demand, 
+                and changing environmental conditions, understanding how water is used and how conditions are changing is essential."),
               br(),
               style = "font-size: 18px;",
               br()
@@ -211,11 +197,11 @@ ui <- dashboardPage(
               p("Explore annual water consumption by provider and year. Compare providers and examine changes in regional water use."),
               
               actionLink(
-                "drought_link",
-                strong("Drought Conditions - How dry is the region?"),
+                "groundwater_link",
+                strong("Groundwater - What is happening to water below ground?"),
                 class = "explore-link"
               ),
-              p("View current drought conditions across the Thompson Okanagan."),
+              p("View active groundwater wells across the Thompson Okanagan."),
               
               actionLink(
                 "stream_state_link",
@@ -494,6 +480,7 @@ ui <- dashboardPage(
             #ChangeOverTimePlot { height: 350px !important; }
             #wellTypePlot { height: 350px !important; }
           }
+          
         ")),
         
         fluidRow(
@@ -523,22 +510,30 @@ ui <- dashboardPage(
             title = "Active Groundwater Wells in the Thompson Okangan Tourism Region",
             solidHeader = TRUE,
             width = 6,
-            leafletOutput("WellPlot", height = 640)
+            leafletOutput("WellPlot", height = 600)
           ),
           
-          box(
-            title = "Selected Well",
-            solidHeader = TRUE,
-            width = 6,
-            plotOutput("ChangeOverTimePlot", height = 600),
-            footer = "Select a well."
-          ),
+          uiOutput("ChangeOverTimePlotBox"),
           
           box(
             title = paste0("Aquifer Types Across ", count(df_map), " Wells"),
             solidHeader = TRUE,
             width = 12,
             plotOutput("WellTypePlot")
+          ),
+          
+          infoBox(
+            title = "",
+            width = 12,
+            color = "light-blue",
+            icon = icon("info"),
+            
+            value = p("Groundwater wells are classified according to the geological materials and aquifer conditions in which they are located. 
+              Unconfined aquifers are directly connected to the water table and can respond to seasonal recharge and drought. Confined 
+              aquifers are separated from the surface by low-permeability layers, with groundwater held under pressure. Bedrock wells access 
+              groundwater stored in fractures within solid rock, where availability can vary considerably between locations.
+              Understanding these differences helps interpret groundwater monitoring data and provides context for assessing water availability 
+              and potential drought sensitivity across the Thompson-Okanagan region.", style = "font-size: 14px;")
           ),
           
           box(
@@ -577,9 +572,6 @@ ui <- dashboardPage(
               toward the Fraser River, while watersheds to the south drain toward the Columbia River. These connected 
               waterways provide important habitat for salmon and support the ecosystems, communities and tourism experiences
               that depend on healthy rivers and lakes."),
-            p("Stream temperature is an important indicator of aquatic ecosystem health. 19 °C is the water-quality guideline of BC and 21 °C is the sockeye migration barrier. Streams at or above 21 °C
-              form a thermal wall that blocks or kills migrating and rearing salmon."),
-            br(),
             h3("Learn More"),
             p(),
             
@@ -601,7 +593,6 @@ ui <- dashboardPage(
               )
             ),
             br(),
-            br(),
             p("The Thompson-Okanagan is located within the traditional and unceded territory of the Syilx
               Okanagan Peoples. Waterways and salmon have sustained Indigenous communities for generations 
               and continue to hold important cultural, ecological, and community significance. The health 
@@ -615,6 +606,16 @@ ui <- dashboardPage(
               )
             ),
             style = "font-size: 18px;"
+          ),
+          
+          infoBox(
+            title = "",
+            width = 12,
+            color = "light-blue",
+            icon = icon("info"),
+            value = "Water temperatures at or above 19°C can cause thermal stress to salmonids, while temperatures at or above 21°C can 
+                    impede the upstream migration of sockeye salmon in the Okanagan watershed. These elevated temperatures can delay migration, 
+                    increase physiological stress, and, with prolonged exposure, contribute to mortality."
           ),
           
           infoBox(
@@ -666,7 +667,7 @@ ui <- dashboardPage(
             width = 12,
             solidHeader = TRUE,
             plotlyOutput("StreamStatePlot", height = 500),
-            style = "font-size: 18px;"
+            p("Dashed lines show threshhold between 19-21 °C causing thermal-stress and migration barriers for salmonids.")
           ),
           
           box(
