@@ -101,7 +101,7 @@ ui <- dashboardPage(
       menuItem("Water Supply", tabName = "net_inflow", icon = icon("square-poll-vertical")),
       menuItem("Water Consumption", tabName = "water_consumption", icon = icon("droplet")),
       menuItem("Groundwater Wells", tabName = "groundwater_wells", icon = icon("map-location")),
-      menuItem("Fish", tabName = "stream", icon = icon("fish")),
+      menuItem("Stream State", tabName = "stream", icon = icon("fish")),
       menuItem("Back to Hub", tabName = NULL, icon = icon("globe"), href = "https://tota-insto-hub.share.connect.posit.cloud/", newtab = FALSE)
     ),
     
@@ -205,7 +205,7 @@ ui <- dashboardPage(
               
               actionLink(
                 "stream_state_link",
-                strong("Fish - What is happening in our fish habitats?"),
+                strong("Stream State - What is happening in our fish habitats?"),
                 class = "explore-link"
               ),
               p("View current stream water temperatures compared to the sockeye migration barrier."),
@@ -567,7 +567,7 @@ ui <- dashboardPage(
             width = 12,
             solidHeader = TRUE,
             p("Salmon connect communities, ecosystems and tourism across the Thompson Okanagan. The Okanagan watershed is used as a pilot area 
-            to better understand stream state across the whole Thompson Okangan. The Okanagan spans two 
+            to better understand stream state across the whole Thompson Okanagan. The Okanagan spans two 
               major watersheds: the Fraser River and Columbia River. Water flowing north of Vernon generally drains 
               toward the Fraser River, while watersheds to the south drain toward the Columbia River. These connected 
               waterways provide important habitat for salmon and support the ecosystems, communities and tourism experiences
