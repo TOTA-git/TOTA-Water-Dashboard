@@ -1,9 +1,9 @@
 dataset,timestamp,status,n_rows,message
-inflow,2026-11-03 00:05:00,success,52,NA
-consumption,2026-11-03 00:05:01,success,21,NA
-daily_mean,2026-11-03 00:05:03,success,13149,NA
-groundwater,2026-11-03 00:05:56,success,413,NA
-stream_temp,2026-11-03 00:05:56,success,19321,NA
-station_metadata,2026-11-03 00:05:57,success,28,NA
-stream_temp_master,2026-11-03 00:05:58,success,74979,NA
-stream_summer,2026-11-03 00:05:59,success,220,NA
+inflow,2026-11-03 22:35:06,success,52,NA
+consumption,2026-11-03 22:35:06,success,21,NA
+daily_mean,2026-11-03 22:35:08,success,13149,NA
+groundwater,2026-11-03 22:35:35,success,472,NA
+stream_temp,2026-11-03 22:35:36,success,19321,NA
+station_metadata,2026-11-03 22:35:36,success,28,NA
+stream_temp_master,2026-11-03 22:35:37,success,74979,NA
+stream_summer,2026-11-03 22:35:38,success,220,NA
