@@ -8725,6 +8725,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM002,Okanagan River at Okanagan Falls,Okanagan,2026-11-16T00:00:00Z,9.225,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM002,Okanagan River at Okanagan Falls,Okanagan,2026-11-17T00:00:00Z,8.764,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM002,Okanagan River at Okanagan Falls,Okanagan,2026-11-18T00:00:00Z,8.251,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM002,Okanagan River at Okanagan Falls,Okanagan,2026-11-19T00:00:00Z,8.035,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM037,Shatford Creek Near Penticton,Okanagan,2019-12-05T00:00:00Z,0.84,0.6,1,5,21,D,NA,WSC_AQ_ARCHIVE,1
 08NM037,Shatford Creek Near Penticton,Okanagan,2019-12-06T00:00:00Z,1.167,0.9,1.5,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM037,Shatford Creek Near Penticton,Okanagan,2019-12-07T00:00:00Z,1.596,1.4,1.9,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -11265,7 +11266,8 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM037,Shatford Creek Near Penticton,Okanagan,2026-11-15T00:00:00Z,6.354,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM037,Shatford Creek Near Penticton,Okanagan,2026-11-16T00:00:00Z,4.7,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM037,Shatford Creek Near Penticton,Okanagan,2026-11-17T00:00:00Z,2.242,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
-08NM037,Shatford Creek Near Penticton,Okanagan,2026-11-18T00:00:00Z,1.961,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM037,Shatford Creek Near Penticton,Okanagan,2026-11-18T00:00:00Z,2.004,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM037,Shatford Creek Near Penticton,Okanagan,2026-11-19T00:00:00Z,2.505,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM050,Okanagan River at Penticton,Okanagan,2016-09-07T00:00:00Z,19.688,19.5,19.82,8,33,D,INRS_NOT_USABLE,WSC_AQ_ARCHIVE,1
 08NM050,Okanagan River at Penticton,Okanagan,2016-09-08T00:00:00Z,19.31,19.05,19.6,24,100,D,INRS_NOT_USABLE,WSC_AQ_ARCHIVE,1
 08NM050,Okanagan River at Penticton,Okanagan,2016-09-09T00:00:00Z,19.321,18.95,19.92,24,100,D,INRS_NOT_USABLE,WSC_AQ_ARCHIVE,1
@@ -14727,6 +14729,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM050,Okanagan River at Penticton,Okanagan,2026-11-16T00:00:00Z,7.732,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM050,Okanagan River at Penticton,Okanagan,2026-11-17T00:00:00Z,7.974,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM050,Okanagan River at Penticton,Okanagan,2026-11-18T00:00:00Z,7.838,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM050,Okanagan River at Penticton,Okanagan,2026-11-19T00:00:00Z,7.345,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2024-02-07T00:00:00Z,4.4,4.4,4.4,1,4,D,NA,WSC_AQ_ARCHIVE,1
 08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2024-02-08T00:00:00Z,4,4,4,1,4,D,NA,WSC_AQ_ARCHIVE,1
 08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2024-02-09T00:00:00Z,3.454,2.9,4.1,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -15742,6 +15745,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2026-11-16T00:00:00Z,7.267,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2026-11-17T00:00:00Z,2.95,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2026-11-18T00:00:00Z,3.175,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM065,Vernon Creek at Outlet of Kalamalka Lake,Okanagan,2026-11-19T00:00:00Z,1.533,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM083,Okanagan Lake at Kelowna,Okanagan,2002-11-24T00:00:00Z,8.784,8.685,8.938,24,100,A,NA,INRS_WSC_DAILY,1
 08NM083,Okanagan Lake at Kelowna,Okanagan,2002-11-25T00:00:00Z,8.492,8.344,8.675,24,100,A,NA,INRS_WSC_DAILY,1
 08NM083,Okanagan Lake at Kelowna,Okanagan,2002-11-26T00:00:00Z,8.328,8.131,8.497,24,100,A,NA,INRS_WSC_DAILY,1
@@ -24281,6 +24285,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM083,Okanagan Lake at Kelowna,Okanagan,2026-11-16T00:00:00Z,10.367,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM083,Okanagan Lake at Kelowna,Okanagan,2026-11-17T00:00:00Z,10.317,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM083,Okanagan Lake at Kelowna,Okanagan,2026-11-18T00:00:00Z,10.188,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM083,Okanagan Lake at Kelowna,Okanagan,2026-11-19T00:00:00Z,9.995,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM084,Skaha Lake at Okanagan Falls,Okanagan,2026-10-28T00:00:00Z,10.7,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM084,Skaha Lake at Okanagan Falls,Okanagan,2026-10-29T00:00:00Z,10.713,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM084,Skaha Lake at Okanagan Falls,Okanagan,2026-10-30T00:00:00Z,10.054,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
@@ -24303,6 +24308,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM084,Skaha Lake at Okanagan Falls,Okanagan,2026-11-16T00:00:00Z,8.8,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM084,Skaha Lake at Okanagan Falls,Okanagan,2026-11-17T00:00:00Z,8.117,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM084,Skaha Lake at Okanagan Falls,Okanagan,2026-11-18T00:00:00Z,7.754,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM084,Skaha Lake at Okanagan Falls,Okanagan,2026-11-19T00:00:00Z,7.21,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM085,Okanagan River Near Oliver,Okanagan,2002-09-27T00:00:00Z,15.925,14.969,16.957,24,100,A,NA,INRS_WSC_DAILY,1
 08NM085,Okanagan River Near Oliver,Okanagan,2002-09-28T00:00:00Z,15.628,13.706,17.059,24,100,A,NA,INRS_WSC_DAILY,1
 08NM085,Okanagan River Near Oliver,Okanagan,2002-09-29T00:00:00Z,15.513,13.075,17.416,23,96,A,NA,INRS_WSC_DAILY,1
@@ -32675,6 +32681,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM085,Okanagan River Near Oliver,Okanagan,2026-11-16T00:00:00Z,8.896,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM085,Okanagan River Near Oliver,Okanagan,2026-11-17T00:00:00Z,7.704,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM085,Okanagan River Near Oliver,Okanagan,2026-11-18T00:00:00Z,7.05,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM085,Okanagan River Near Oliver,Okanagan,2026-11-19T00:00:00Z,7.329,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM116,Mission Creek Near East Kelowna,Okanagan,2015-12-07T00:00:00Z,5.333,5,5.6,3,12,D,INRS_NOT_USABLE,WSC_AQ_ARCHIVE,1
 08NM116,Mission Creek Near East Kelowna,Okanagan,2015-12-08T00:00:00Z,4.267,3.4,6.4,24,100,D,INRS_NOT_USABLE,WSC_AQ_ARCHIVE,1
 08NM116,Mission Creek Near East Kelowna,Okanagan,2015-12-09T00:00:00Z,5.129,3.1,7.6,24,100,D,INRS_NOT_USABLE,WSC_AQ_ARCHIVE,1
@@ -36297,6 +36304,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM116,Mission Creek Near East Kelowna,Okanagan,2026-11-16T00:00:00Z,6.454,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM116,Mission Creek Near East Kelowna,Okanagan,2026-11-17T00:00:00Z,4.221,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM116,Mission Creek Near East Kelowna,Okanagan,2026-11-18T00:00:00Z,3.621,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM116,Mission Creek Near East Kelowna,Okanagan,2026-11-19T00:00:00Z,2.781,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM123,B.x. Creek Below Swan Lake Control Dam,Okanagan,2026-10-28T00:00:00Z,9.017,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM123,B.x. Creek Below Swan Lake Control Dam,Okanagan,2026-10-29T00:00:00Z,9,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM123,B.x. Creek Below Swan Lake Control Dam,Okanagan,2026-10-30T00:00:00Z,9.6,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
@@ -36319,7 +36327,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM123,B.x. Creek Below Swan Lake Control Dam,Okanagan,2026-11-16T00:00:00Z,10.104,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM123,B.x. Creek Below Swan Lake Control Dam,Okanagan,2026-11-17T00:00:00Z,9.471,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM123,B.x. Creek Below Swan Lake Control Dam,Okanagan,2026-11-18T00:00:00Z,9.479,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
-08NM123,B.x. Creek Below Swan Lake Control Dam,Okanagan,2026-11-19T00:00:00Z,9.5,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM123,B.x. Creek Below Swan Lake Control Dam,Okanagan,2026-11-19T00:00:00Z,9.205,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM134,Camp Creek at Mouth Near Thirsk,Okanagan,2026-10-28T00:00:00Z,3.55,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM134,Camp Creek at Mouth Near Thirsk,Okanagan,2026-10-29T00:00:00Z,2.8,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM134,Camp Creek at Mouth Near Thirsk,Okanagan,2026-10-30T00:00:00Z,2.921,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
@@ -36342,6 +36350,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM134,Camp Creek at Mouth Near Thirsk,Okanagan,2026-11-16T00:00:00Z,3.104,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM134,Camp Creek at Mouth Near Thirsk,Okanagan,2026-11-17T00:00:00Z,1.021,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM134,Camp Creek at Mouth Near Thirsk,Okanagan,2026-11-18T00:00:00Z,0.2,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM134,Camp Creek at Mouth Near Thirsk,Okanagan,2026-11-19T00:00:00Z,0.686,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM139,Esperon Creek Near Kelowna,Okanagan,2023-09-14T00:00:00Z,8.576,7.3,9.38,5,21,D,NA,WSC_AQ_ARCHIVE,1
 08NM139,Esperon Creek Near Kelowna,Okanagan,2023-09-15T00:00:00Z,4.929,0,10.3,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM139,Esperon Creek Near Kelowna,Okanagan,2023-09-16T00:00:00Z,5.785,0.2,11.3,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -37481,6 +37490,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM139,Esperon Creek Near Kelowna,Okanagan,2026-11-16T00:00:00Z,0.724,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM139,Esperon Creek Near Kelowna,Okanagan,2026-11-17T00:00:00Z,0.142,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM139,Esperon Creek Near Kelowna,Okanagan,2026-11-18T00:00:00Z,0.03,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM139,Esperon Creek Near Kelowna,Okanagan,2026-11-19T00:00:00Z,-0.023,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2018-10-18T00:00:00Z,13.014,12.7,13.3,7,29,D,NA,WSC_AQ_ARCHIVE,1
 08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2018-10-19T00:00:00Z,12.377,11.7,13.2,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2018-10-20T00:00:00Z,12.417,11.9,13.2,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -40038,6 +40048,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2026-11-16T00:00:00Z,9.454,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2026-11-17T00:00:00Z,8.838,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2026-11-18T00:00:00Z,7.304,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM143,Kalamalka Lake at Vernon Pumphouse,Okanagan,2026-11-19T00:00:00Z,8.005,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM149,Shuttleworth Creek at the Mouth,Okanagan,2006-03-25T00:00:00Z,6.804,3.9,9.5,24,100,C,INRS_DOUBTFUL,INRS_WSC_DAILY,1
 08NM149,Shuttleworth Creek at the Mouth,Okanagan,2006-05-20T00:00:00Z,14.796,13.1,17.8,24,100,C,INRS_DOUBTFUL,INRS_WSC_DAILY,1
 08NM149,Shuttleworth Creek at the Mouth,Okanagan,2006-05-23T00:00:00Z,12.557,10.4,14.7,23,96,C,INRS_DOUBTFUL,INRS_WSC_DAILY,1
@@ -41812,6 +41823,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM158,Trout Creek at the Mouth,Okanagan,2026-11-16T00:00:00Z,6.33,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM158,Trout Creek at the Mouth,Okanagan,2026-11-17T00:00:00Z,4.421,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM158,Trout Creek at the Mouth,Okanagan,2026-11-18T00:00:00Z,4.119,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM158,Trout Creek at the Mouth,Okanagan,2026-11-19T00:00:00Z,3.483,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM160,Vernon Creek Near the Mouth,Okanagan,2024-04-15T00:00:00Z,11.244,10.8,11.7,9,38,D,NA,WSC_AQ_ARCHIVE,1
 08NM160,Vernon Creek Near the Mouth,Okanagan,2024-04-16T00:00:00Z,9.458,8.3,11.3,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM160,Vernon Creek Near the Mouth,Okanagan,2024-04-17T00:00:00Z,8.058,6.8,9.3,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -42760,6 +42772,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM160,Vernon Creek Near the Mouth,Okanagan,2026-11-16T00:00:00Z,9.854,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM160,Vernon Creek Near the Mouth,Okanagan,2026-11-17T00:00:00Z,8.579,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM160,Vernon Creek Near the Mouth,Okanagan,2026-11-18T00:00:00Z,8.588,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM160,Vernon Creek Near the Mouth,Okanagan,2026-11-19T00:00:00Z,8.076,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM165,Lambly Creek above Terrace Creek,Okanagan,2023-09-14T00:00:00Z,10.375,9.9,10.7,4,17,D,NA,WSC_AQ_ARCHIVE,1
 08NM165,Lambly Creek above Terrace Creek,Okanagan,2023-09-15T00:00:00Z,9.654,8.5,10.8,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM165,Lambly Creek above Terrace Creek,Okanagan,2023-09-16T00:00:00Z,9.867,8.8,10.8,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -43922,6 +43935,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM165,Lambly Creek above Terrace Creek,Okanagan,2026-11-16T00:00:00Z,3.208,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM165,Lambly Creek above Terrace Creek,Okanagan,2026-11-17T00:00:00Z,1.183,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM165,Lambly Creek above Terrace Creek,Okanagan,2026-11-18T00:00:00Z,0.987,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM165,Lambly Creek above Terrace Creek,Okanagan,2026-11-19T00:00:00Z,0.248,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM171,Vaseux Creek above Solco Creek,Okanagan,2024-02-01T00:00:00Z,-0.1,-0.1,-0.1,6,25,D,NA,WSC_AQ_ARCHIVE,1
 08NM171,Vaseux Creek above Solco Creek,Okanagan,2024-02-02T00:00:00Z,-0.1,-0.1,-0.1,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM171,Vaseux Creek above Solco Creek,Okanagan,2024-02-03T00:00:00Z,-0.1,-0.1,-0.1,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -44944,6 +44958,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM171,Vaseux Creek above Solco Creek,Okanagan,2026-11-16T00:00:00Z,2.837,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM171,Vaseux Creek above Solco Creek,Okanagan,2026-11-17T00:00:00Z,1.929,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM171,Vaseux Creek above Solco Creek,Okanagan,2026-11-18T00:00:00Z,1.196,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM171,Vaseux Creek above Solco Creek,Okanagan,2026-11-19T00:00:00Z,0.91,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM172,Pearson Creek Near the Mouth,Okanagan,2021-05-21T00:00:00Z,4.183,3.1,5,6,25,D,NA,WSC_AQ_ARCHIVE,1
 08NM172,Pearson Creek Near the Mouth,Okanagan,2021-05-22T00:00:00Z,4.017,2.6,5.8,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM172,Pearson Creek Near the Mouth,Okanagan,2021-05-23T00:00:00Z,4.438,3.2,5.9,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -46714,6 +46729,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM172,Pearson Creek Near the Mouth,Okanagan,2026-11-16T00:00:00Z,3.396,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM172,Pearson Creek Near the Mouth,Okanagan,2026-11-17T00:00:00Z,1.671,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM172,Pearson Creek Near the Mouth,Okanagan,2026-11-18T00:00:00Z,0.75,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM172,Pearson Creek Near the Mouth,Okanagan,2026-11-19T00:00:00Z,0.31,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2023-09-14T00:00:00Z,13.15,13.1,13.2,2,8,D,NA,WSC_AQ_ARCHIVE,1
 08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2023-09-15T00:00:00Z,11.583,10.2,13,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2023-09-16T00:00:00Z,11.688,10.4,13,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -47876,6 +47892,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2026-11-16T00:00:00Z,4.421,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2026-11-17T00:00:00Z,2.583,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2026-11-18T00:00:00Z,2.442,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM174,Whiteman Creek above Bouleau Creek,Okanagan,2026-11-19T00:00:00Z,1.924,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM200,Inkaneep Creek Near the Mouth,Okanagan,2006-03-24T00:00:00Z,7.717,5,11,23,96,A,NA,INRS_WSC_DAILY,1
 08NM200,Inkaneep Creek Near the Mouth,Okanagan,2006-03-25T00:00:00Z,6.822,3.9,10.3,23,96,A,NA,INRS_WSC_DAILY,1
 08NM200,Inkaneep Creek Near the Mouth,Okanagan,2006-03-28T00:00:00Z,6.622,4.6,9.3,23,96,A,NA,INRS_WSC_DAILY,1
@@ -54841,7 +54858,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM200,Inkaneep Creek Near the Mouth,Okanagan,2026-11-16T00:00:00Z,8.225,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM200,Inkaneep Creek Near the Mouth,Okanagan,2026-11-17T00:00:00Z,6.023,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM200,Inkaneep Creek Near the Mouth,Okanagan,2026-11-18T00:00:00Z,4.776,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
-08NM200,Inkaneep Creek Near the Mouth,Okanagan,2026-11-19T00:00:00Z,5.34,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM200,Inkaneep Creek Near the Mouth,Okanagan,2026-11-19T00:00:00Z,5.315,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM232,Belgo Creek Below Hilda Creek,Okanagan,2023-09-11T00:00:00Z,15.467,15.1,15.8,3,12,D,NA,WSC_AQ_ARCHIVE,1
 08NM232,Belgo Creek Below Hilda Creek,Okanagan,2023-09-12T00:00:00Z,14.392,13.6,15.3,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM232,Belgo Creek Below Hilda Creek,Okanagan,2023-09-13T00:00:00Z,14.271,13.8,15.2,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -55973,6 +55990,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM232,Belgo Creek Below Hilda Creek,Okanagan,2026-11-16T00:00:00Z,2.767,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM232,Belgo Creek Below Hilda Creek,Okanagan,2026-11-17T00:00:00Z,1.179,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM232,Belgo Creek Below Hilda Creek,Okanagan,2026-11-18T00:00:00Z,0.433,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM232,Belgo Creek Below Hilda Creek,Okanagan,2026-11-19T00:00:00Z,0.314,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM240,Two Forty Creek Near Penticton,Okanagan,2017-01-26T00:00:00Z,1.4,1.4,1.4,2,8,D,NA,WSC_AQ_ARCHIVE,1
 08NM240,Two Forty Creek Near Penticton,Okanagan,2017-01-27T00:00:00Z,1.5,1.3,1.7,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM240,Two Forty Creek Near Penticton,Okanagan,2017-01-28T00:00:00Z,1.458,1.3,1.7,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -59505,6 +59523,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM240,Two Forty Creek Near Penticton,Okanagan,2026-11-16T00:00:00Z,3.52,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM240,Two Forty Creek Near Penticton,Okanagan,2026-11-17T00:00:00Z,3.481,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM240,Two Forty Creek Near Penticton,Okanagan,2026-11-18T00:00:00Z,3.525,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM240,Two Forty Creek Near Penticton,Okanagan,2026-11-19T00:00:00Z,3.338,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM241,Two Forty-One Creek Near Penticton,Okanagan,2016-08-30T00:00:00Z,13.9,13.9,13.9,1,4,D,NA,WSC_AQ_ARCHIVE,1
 08NM241,Two Forty-One Creek Near Penticton,Okanagan,2016-08-31T00:00:00Z,11.583,8.7,14.7,24,100,A,NA,WSC_AQ_ARCHIVE,2
 08NM241,Two Forty-One Creek Near Penticton,Okanagan,2016-09-01T00:00:00Z,11.075,8.7,14.3,24,100,A,NA,WSC_AQ_ARCHIVE,2
@@ -63120,6 +63139,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM241,Two Forty-One Creek Near Penticton,Okanagan,2026-11-16T00:00:00Z,0.242,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM241,Two Forty-One Creek Near Penticton,Okanagan,2026-11-17T00:00:00Z,0.021,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM241,Two Forty-One Creek Near Penticton,Okanagan,2026-11-18T00:00:00Z,0.133,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM241,Two Forty-One Creek Near Penticton,Okanagan,2026-11-19T00:00:00Z,0.152,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2016-03-24T00:00:00Z,1.66,1.4,1.8,5,21,D,NA,WSC_AQ_ARCHIVE,1
 08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2016-03-25T00:00:00Z,1.683,1.4,1.9,24,100,A,NA,WSC_AQ_ARCHIVE,2
 08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2016-03-26T00:00:00Z,1.625,1.3,1.9,24,100,A,NA,WSC_AQ_ARCHIVE,2
@@ -67012,6 +67032,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2026-11-16T00:00:00Z,0.171,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2026-11-17T00:00:00Z,0.017,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2026-11-18T00:00:00Z,0.112,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM242,Dennis Creek Near 1780 Metre Contour,Okanagan,2026-11-19T00:00:00Z,0.119,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM246,Vaseux Creek Near the Mouth,Okanagan,2006-03-24T00:00:00Z,5.625,4.1,10,24,100,C,INRS_DOUBTFUL,INRS_WSC_DAILY,1
 08NM246,Vaseux Creek Near the Mouth,Okanagan,2006-03-25T00:00:00Z,4.9,2.6,10.1,24,100,C,INRS_DOUBTFUL,INRS_WSC_DAILY,1
 08NM246,Vaseux Creek Near the Mouth,Okanagan,2006-03-27T00:00:00Z,4.458,2,9.8,24,100,C,INRS_DOUBTFUL,INRS_WSC_DAILY,1
@@ -72019,6 +72040,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2026-11-16T00:00:00Z,8.821,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2026-11-17T00:00:00Z,8.467,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2026-11-18T00:00:00Z,8.088,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM247,Okanagan River Below Mcintyre Dam,Okanagan,2026-11-19T00:00:00Z,7.814,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2021-05-05T00:00:00Z,4.646,4.528,8.3,34,100,B,SPIKE,WSC_AQ_ARCHIVE,1
 08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2021-05-06T00:00:00Z,8.596,7.5,9.5,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2021-05-07T00:00:00Z,9.1,8.3,9.9,23,96,A,NA,WSC_AQ_ARCHIVE,1
@@ -73285,6 +73307,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2026-11-16T00:00:00Z,8.067,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2026-11-17T00:00:00Z,6.6,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2026-11-18T00:00:00Z,6.562,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM248,Coldstream Creek at Coldstream Creek Road,Okanagan,2026-11-19T00:00:00Z,5.89,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2023-10-05T00:00:00Z,12.733,12.7,12.8,3,12,D,NA,WSC_AQ_ARCHIVE,1
 08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2023-10-06T00:00:00Z,12.196,11.5,12.8,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2023-10-07T00:00:00Z,11.746,11.1,12.2,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -74426,6 +74449,7 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2026-11-16T00:00:00Z,7.15,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2026-11-17T00:00:00Z,5.438,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2026-11-18T00:00:00Z,4.975,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM249,B.x. Creek at B.x. Ranch Park,Okanagan,2026-11-19T00:00:00Z,4.5,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM250,Vernon Creek at Swalwell Park,Okanagan,2023-10-05T00:00:00Z,15.014,14.8,15.3,7,29,D,NA,WSC_AQ_ARCHIVE,1
 08NM250,Vernon Creek at Swalwell Park,Okanagan,2023-10-06T00:00:00Z,13.767,12.7,15.2,24,100,A,NA,WSC_AQ_ARCHIVE,1
 08NM250,Vernon Creek at Swalwell Park,Okanagan,2023-10-07T00:00:00Z,13.442,12.6,14.1,24,100,A,NA,WSC_AQ_ARCHIVE,1
@@ -75550,3 +75574,4 @@ station_id,station_name,basin,date,tw_mean_c,tw_min_c,tw_max_c,n_valid_readings,
 08NM250,Vernon Creek at Swalwell Park,Okanagan,2026-11-16T00:00:00Z,5.075,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM250,Vernon Creek at Swalwell Park,Okanagan,2026-11-17T00:00:00Z,3.15,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
 08NM250,Vernon Creek at Swalwell Park,Okanagan,2026-11-18T00:00:00Z,3.55,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
+08NM250,Vernon Creek at Swalwell Park,Okanagan,2026-11-19T00:00:00Z,1.214,NA,NA,NA,NA,U,NA,TEMPSTREAM_REALTIME,1
