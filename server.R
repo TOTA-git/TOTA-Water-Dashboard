@@ -128,6 +128,8 @@ server <- function(input, output, session) {
         y = "Net Weekly Inflow Volume (acre-feet)"
       ) +
       
+      theme_minimal()+
+      
       theme(
         axis.title = element_text(size = if (is_narrow) 8 else 14),
         axis.text = element_text(size = if (is_narrow) 8 else 12),
@@ -212,6 +214,8 @@ server <- function(input, output, session) {
       guides(
         color = if (is_narrow) guide_legend(ncol = 1) else guide_legend()
       ) +
+      
+      theme_minimal()+
       
       theme(axis.title = element_text(size = if (is_narrow) 10 else 16),
             axis.text = element_text(size = if (is_narrow) 10 else 12),
@@ -319,7 +323,9 @@ server <- function(input, output, session) {
     
     filtered_df_consumption <- df_consumption_long %>%
       dplyr::filter(MUN_NAME %in% input$provider,
-                    Year == input$year_consumption)
+                    Year == input$year_consumption) %>%
+      dplyr::arrange(desc(Consumption)) %>%
+      dplyr::mutate(MUN_NAME = factor(MUN_NAME, levels = MUN_NAME))
     
     plot <- ggplot(filtered_df_consumption, aes(x = MUN_NAME, 
                                                 y = Consumption, 
@@ -337,6 +343,9 @@ server <- function(input, output, session) {
         labs(
           x = "Provider",
           y = "Consumption (m³)") +
+      
+        theme_minimal()+
+      
         theme(
           axis.title = element_text(size = if (is_narrow) 10 else 16),
           axis.text = element_text(size = if (is_narrow) 6 else 12),
@@ -409,6 +418,8 @@ server <- function(input, output, session) {
         labs(
           y = "Year",
           x = "Consumption (m³)") +
+     
+      theme_minimal() +
         
         theme(
           axis.title = element_text(size = if (is_narrow) 12 else 18),
@@ -547,6 +558,8 @@ server <- function(input, output, session) {
         x = NULL, 
         y = "Average Water Level Below Ground Surface (m)"
       )+ 
+      
+      theme_minimal() +
       
       theme(
         axis.title = element_text(size = if (is_narrow) 10 else 18),
@@ -704,6 +717,8 @@ server <- function(input, output, session) {
           x = "Month", 
           y = "Mean Stream Temp"
         ) +
+      
+        theme_minimal() +
         
         theme(axis.title = element_text(size = if (is_narrow) 10 else 16),
               axis.text = element_text(size = if (is_narrow) 8 else 12),
@@ -799,7 +814,7 @@ server <- function(input, output, session) {
               x = NULL,
               y = NULL
             ) +
-            # theme_minimal() +
+            theme_minimal() +
             theme(axis.text = element_text(size = if (is_narrow) 10 else 16),
                   axis.text.x = element_text(hjust = if (is_narrow) 1 else 0.5),
                   legend.text = element_text(size = if (is_narrow) 8 else 14),
@@ -993,6 +1008,8 @@ server <- function(input, output, session) {
           "7-day mean water temperature \n (", date_range, ")"),
         y = "Station"
       )+ 
+      
+      theme_classic() +
       
       theme(axis.title = element_text(size = if (is_narrow) 10 else 16),
             axis.text = element_text(size = if (is_narrow) 8 else 12),

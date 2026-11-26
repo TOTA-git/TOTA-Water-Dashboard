@@ -208,7 +208,7 @@ ui <- dashboardPage(
                 strong("Stream State - What is happening in our fish habitats?"),
                 class = "explore-link"
               ),
-              p("View current stream water temperatures compared to the sockeye migration barrier."),
+              p("View stream water temperatures compared to the sockeye migration barrier."),
               
               br(),
               h2("Acknowledgements"),
@@ -503,7 +503,7 @@ ui <- dashboardPage(
               ), 
             ),
             
-            style = "font-size: 17px;"
+            style = "font-size: 18px;"
           ),
           
           box(
@@ -528,7 +528,7 @@ ui <- dashboardPage(
             color = "light-blue",
             icon = icon("info"),
             
-            value = p("Groundwater wells are classified according to the geological materials and aquifer conditions in which they are located. 
+            subtitle = p("Groundwater wells are classified according to the geological materials and aquifer conditions in which they are located. 
               Unconfined aquifers are directly connected to the water table and can respond to seasonal recharge and drought. Confined 
               aquifers are separated from the surface by low-permeability layers, with groundwater held under pressure. Bedrock wells access 
               groundwater stored in fractures within solid rock, where availability can vary considerably between locations.
@@ -613,9 +613,9 @@ ui <- dashboardPage(
             width = 12,
             color = "light-blue",
             icon = icon("info"),
-            value = "Water temperatures at or above 19°C can cause thermal stress to salmonids, while temperatures at or above 21°C can 
+            subtitle = p("Water temperatures at or above 19°C can cause thermal stress to salmonids, while temperatures at or above 21°C can 
                     impede the upstream migration of sockeye salmon in the Okanagan watershed. These elevated temperatures can delay migration, 
-                    increase physiological stress, and, with prolonged exposure, contribute to mortality."
+                    increase physiological stress, and, with prolonged exposure, contribute to mortality.", style = "font-size: 16px;")
           ),
           
           infoBox(
@@ -666,7 +666,7 @@ ui <- dashboardPage(
             title = "Okanagan Weekly Mean Stream Temperature",
             width = 12,
             solidHeader = TRUE,
-            plotlyOutput("StreamStatePlot", height = 500),
+            plotlyOutput("StreamStatePlot", height = 550),
             p("Dashed lines show threshhold between 19-21 °C causing thermal-stress and migration barriers for salmonids.")
           ),
           
