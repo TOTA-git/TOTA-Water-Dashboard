@@ -28,7 +28,7 @@ This document is intended to serve as a technical handover document for future T
 
 The data is refreshed daily using a Github Action Workflow (refresh_data.yml). When the data is refresh it is pushed/committed to this repo, this triggers the Posit Connect Cloud to republish the dashboard with the new refreshed data. 
 
-*Everytime a commit is made in the repo, the dashbaord is republished.*
+*Every time a commit is made in the repo, the dashboard is automatically republished.*
 
 The dashboard is structured using standard R Shiny files.
 
@@ -84,8 +84,8 @@ This includes:
 * Sidebar navigation
 * Dashboard tabs
 * Text and explanations
-* Plot locations
-* Maps
+* Plot and map output
+* Interactive filters
 * Boxes and information panels
 * Images
 * Footer
@@ -98,6 +98,7 @@ This includes:
 This includes:
 
 * Plot creation
+* Value boxes
 * Interactive filters
 * Maps
 * Data transformations used during the user session
@@ -182,9 +183,9 @@ This is important because:
 
 To manually run the refresh process:
 
-select "Actions" -> "Scheduled Data Refresh" -> "Run workflow"
+On Github select "Actions" -> "Scheduled Data Refresh" -> "Run workflow"
 
-Refresh usually takes 2-4 minutes
+Refresh usually takes 2-4 minutes. Once the refresh is done the dashboard will be automatically republished on Connect Cloud.
 
 ---
 
@@ -327,74 +328,6 @@ To add a new well:
 3. Add status and any required metadata.
 4. Run the refresh process.
 5. Confirm that the well appears on the map.
-
----
-
-## Current Drought Conditions
-
-Source:
-
-* British Columbia drought information
-* ArcGIS FeatureServer
-
-The dashboard requests current drought information for selected basins.
-
-The current list includes:
-
-* Okanagan
-* South Thompson
-* North Thompson
-* Lower Thompson
-* Kettle River
-* Nicola
-* Similkameen
-
-The current drought URL is defined directly in `data_refresh.R`.
-
-### Important maintenance note
-
-If the drought layer changes:
-
-1. Check the BC drought portal.
-2. Find the updated ArcGIS FeatureServer.
-3. Confirm that the field names are still correct.
-4. Update the URL in `data_refresh.R`.
-
----
-
-## Historical Drought Conditions
-
-Source:
-
-* TOTA-maintained Google Sheet (Do not change the URL of this sheet)
-
-The historical drought data uses:
-
-```text
-GOOGLE_SHEET_DROUGHT_URL
-```
-
-The refresh script expects:
-
-```text
-BasinName
-Start_Date
-DroughtLevel
-```
-
-The script also converts:
-
-```text
-Not updated outside of core drought season
-```
-
-to:
-
-```text
-6
-```
-
-Future maintainers should be aware of this transformation when updating the source data.
 
 ---
 
@@ -693,7 +626,7 @@ global.R
 Example:
 
 ```r
-df_new_data <- read_cache_csv("df_new_data")
+df_new_data <- read_cache_csv("new_data")
 ```
 
 ---
